@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         customStart: '#FFAB00',
         customEnd: '#F5BA41B2',
+        cyellow: "#F5BA41",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
