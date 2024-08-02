@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { inter, lato, poppins } from "./_Utils/fonts";
 import Image from "next/image";
-import logo from "./_Assets/logo-no-background.png";
+
 import downArrow from "./_Assets/down-arrow.png";
 import creator from "./_Assets/Website Creator-rafiki.png";
 import charts from "./_Assets/Charts-pana.png";
@@ -16,34 +16,16 @@ import pontossag from "./_Assets/pontossag.png";
 
 import pipa from "./_Assets/pipa.png";
 import iksz from "./_Assets/iksz.png";
-import plus from "./_Assets/plus.png";
 
-import email from "./_Assets/email.png";
-import telo from "./_Assets/mobile.png";
-import facebook from "./_Assets/facebook.png";
+import ToggleDiv from "./_Components/ToggleDiv";
+import Footer from "./_Components/Footer";
+import Header from "./_Components/Header";
 
 export default function Home() {
   return (
     <>
-      {/* a headert szedd kulon komponensre majd */}
-      {/* <div className="w-full flex flex-wrap items-center">
-        <Image src={logo} alt="logo" width={75} height={75} className="m-3" />
-        <div className="ml-auto mr-2 flex">
-          <div className="space-x-3">
-            <span className={`${lato.className}`}>Csomagok</span>
-            <span className={`${lato.className}`}>Kapcsolat</span>
-            <span className={`${lato.className}`}>Referencia</span>
-          </div>
-          <div className="ml-28 mr-9">
-            <span
-              className={`${lato.className} bg-gradient-to-br from-customStart to-customEnd p-2 rounded-full text-white`}
-            >
-              Ajánlatot kérek
-            </span>
-          </div>
-        </div>
-      </div> */}
-
+      <Header />
+      
       <div className="w-full flex flex-col md:flex-row md:h-[450px]">
         <div className="w-full md:w-1/2 flex items-center justify-center p-4">
           <div>
@@ -65,11 +47,12 @@ export default function Home() {
                 className="ml-2 md:ml-3"
               />
             </span>
-            <span
+            <Link
+              href="/contact"
               className={`${lato.className} bg-gradient-to-br from-customStart to-customEnd p-2 rounded-full text-white px-3 py-2 md:px-4 md:py-3 mx-4 mt-3 uppercase text-xs md:text-sm font-bold`}
             >
-              Árajánlatot kérek
-            </span>
+              Ajánlatot kérek
+            </Link>
           </div>
         </div>
         <div className="w-full md:w-1/2 flex p-4">
@@ -111,14 +94,14 @@ export default function Home() {
               való kapcsolattartást. Emellett a jól optimalizált weboldal segít
               az új ügyfelek megszerzésében és az üzleti növekedésben.
             </p>
-            <span className="inline-flex items-center border-cyellow border rounded-full justify-center px-3 py-2 md:px-4 md:py-3 mx-3 mt-3 uppercase text-xs md:text-sm text-cyellow font-bold">
+            <Link href="/blog" className="inline-flex items-center border-cyellow border rounded-full justify-center px-3 py-2 md:px-4 md:py-3 mx-3 mt-3 uppercase text-xs md:text-sm text-cyellow font-bold">
               Tovább a blogra
-            </span>
+            </Link>
           </div>
         </div>
       </div>
 
-      <div className="text-center items-center mt-[35px] p-4">
+      <div className="text-center items-center mt-[35px] p-4 mt-24 mb-24">
         <h3 className="text-2xl md:text-3xl font-bold m-3">
           Miért válassz minket?
         </h3>
@@ -304,114 +287,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full bg-cyellow p-10 flex justify-center items-center flex-col">
-        <h3 className="text-2xl md:text-3xl font-bold m-3 text-white text-center">
-          Referenciák
-        </h3>
-        <p className="text-center w-1/2 m-3">
-          Frissen indult vállalkozásként, a munka tapasztalatunkok kívül sokat
-          nem tudunk mutatni. Ezeket <span className="font-bold">itt</span>{" "}
-          megtekintheted. Legyen a{" "}
-          <span className="text-white font-bold">Tied</span> a megtiszteltetés,
-          hogy elsők között választod a Mi szolgáltatásainkat.{" "}
-        </p>
+      <ToggleDiv />
 
-        <div className="border border-white flex flex-col w-[277px] h-[277px] items-center justify-center rounded-2xl border-dashed border-8 mt-4">
-          <Image src={plus} alt="logo" className="mb-4" />
-          <p className="text-center text-white mt-4">A te vállalkozásod</p>
-        </div>
-      </div>
-
-      <div className="flex flex-col items-center space-y-4 m-8">
-        <h3 className="text-3xl font-bold text-center">
-          Megtetted első lépésed,
-        </h3>
-        <p className="text-center">
-          A Siker felé, vedd fel velünk a kapcsolatot!
-        </p>
-        <div className="bg-cyellow bg-opacity-20 rounded-xl w-2/4 flex flex-col items-center justify-center p-8 space-y-6">
-          <input
-            type="text"
-            placeholder="Név"
-            className="w-full p-4 placeholder-gray-500 rounded-full"
-          />
-          <input
-            type="email"
-            placeholder="E-mail cím"
-            className="w-full p-4 placeholder-gray-500 rounded-full"
-          />
-          <input
-            type="tel"
-            placeholder="Telefonszám"
-            className="w-full p-4 placeholder-gray-500 rounded-full"
-          />
-          <div className="w- flex items-center space-x-2">
-            <input type="checkbox" />
-            <label className="italic">
-              Hozzájárulok a megadott adataim kapcsolatfelvétel céljából történő
-              kezeléséhez.
-            </label>
-          </div>
-          <button className="bg-cyellow w-2/4 p-2 text-white rounded-full">
-            Küldés
-          </button>
-        </div>
-      </div>
-
-      <div className="w-full bg-fgrey flex flex-wrap p-8 text-white">
-        <div className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
-          <div className="flex items-center">
-            <Image
-              src={logo}
-              alt="logo"
-              width={75}
-              height={75}
-              className="m-3"
-            />
-            <h1 className="text-white font-bold text-xl ml-2">N&M Web</h1>
-          </div>
-          <p className="text-white">
-            Ahol a kreatív megoldások, egyedi ötletek megvalósításra kerülnek.
-            Megoldásainkat azok az üzemeltetők választják, akiknek fontos az
-            egyedi megjelenés és a működés hosszú távon.
-          </p>
-        </div>
-        <div className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
-          <h3 className="text-white font-bold text-xl">Navigáció</h3>
-          <ul className="space-y-2">
-            <li className="hover:text-gray-400 cursor-pointer">Blog</li>
-            <li className="hover:text-gray-400 cursor-pointer">Kapcsolat</li>
-            <li className="hover:text-gray-400 cursor-pointer">Rólunk</li>
-            <li className="hover:text-gray-400 cursor-pointer">Csomagok</li>
-          </ul>
-        </div>
-        <div className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
-          <h3 className="text-white font-bold text-xl">Kapcsolat</h3>
-          <div className="flex items-center space-x-2">
-            <Image src={email} alt="email logo" className="w-6 h-6" />
-            <p>email@email.com</p>
-          </div>
-          <div className="flex items-center space-x-2">
-            <Image src={telo} alt="phone logo" className="w-6 h-6" />
-            <p>+36704228587</p>
-          </div>
-          <div className="flex items-center space-x-2">
-            <Image src={facebook} alt="facebook logo" className="w-6 h-6" />
-            <p>facebook</p>
-          </div>
-        </div>
-        <div className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
-          <h3 className="text-white font-bold text-xl">Egyéb linkek</h3>
-          <p className="hover:text-gray-400 cursor-pointer">FAQ</p>
-        </div>
-        <div className="w-full h-[25px] bg-fgrey text-white pl-4 text-xs flex items-center justify-center">
-          COPYRIGHT @ 2024 Minden jog fenttartva
-        </div>
-      </div>
-
-      {/* <p className={`${lato.className}`}>Text proba1</p>
-      <p className={`${poppins.className}`}>Text proba1</p>
-      <p className={`${inter.className} bg-red-900`}>Text proba1</p> */}
+      <Footer />
     </>
   );
 }
