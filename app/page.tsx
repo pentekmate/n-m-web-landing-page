@@ -16,6 +16,11 @@ import pontossag from "./_Assets/pontossag.png";
 
 import pipa from "./_Assets/pipa.png";
 import iksz from "./_Assets/iksz.png";
+import plus from "./_Assets/plus.png";
+
+import email from "./_Assets/email.png";
+import telo from "./_Assets/mobile.png";
+import facebook from "./_Assets/facebook.png";
 
 export default function Home() {
   return (
@@ -299,37 +304,108 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full flex flex-col md:flex-row md:h-[450px] bg-cyellow p-10">
-        <div className="w-full md:w-1/2 flex p-4 flex-wrap">
-          <div>
-            <h3 className="text-2xl md:text-3xl font-bold m-3">
-              Referenciák
-            </h3>
-            <p className="text-base md:text-lg ml-3 leading-5">
-              Az N&M Web elindulása alkalmából teljesen ingyenes fejlesztési
-              költségi akciót hírdetünk. Célünk, hogy{" "}
-              <span className="text-cyellow">együtt növekedjünk.</span> Így az
-              első 3 ügyfélnek , fejlesztési költségektől mentesen készítünk
-              weboldalt.
-            </p>
-            <p className="text-cyellow font-bold ml-3 text-xl">
-              Ne hagyd ki ezt az egyedi ajánlatot, és kérj ajánlatot még ma!
-            </p>
+      <div className="w-full bg-cyellow p-10 flex justify-center items-center flex-col">
+        <h3 className="text-2xl md:text-3xl font-bold m-3 text-white text-center">
+          Referenciák
+        </h3>
+        <p className="text-center w-1/2 m-3">
+          Frissen indult vállalkozásként, a munka tapasztalatunkok kívül sokat
+          nem tudunk mutatni. Ezeket <span className="font-bold">itt</span>{" "}
+          megtekintheted. Legyen a{" "}
+          <span className="text-white font-bold">Tied</span> a megtiszteltetés,
+          hogy elsők között választod a Mi szolgáltatásainkat.{" "}
+        </p>
+
+        <div className="border border-white flex flex-col w-[277px] h-[277px] items-center justify-center rounded-2xl border-dashed border-8 mt-4">
+          <Image src={plus} alt="logo" className="mb-4" />
+          <p className="text-center text-white mt-4">A te vállalkozásod</p>
+        </div>
+      </div>
+
+      <div className="flex flex-col items-center space-y-4 m-8">
+        <h3 className="text-3xl font-bold text-center">
+          Megtetted első lépésed,
+        </h3>
+        <p className="text-center">
+          A Siker felé, vedd fel velünk a kapcsolatot!
+        </p>
+        <div className="bg-cyellow bg-opacity-20 rounded-xl w-2/4 flex flex-col items-center justify-center p-8 space-y-6">
+          <input
+            type="text"
+            placeholder="Név"
+            className="w-full p-4 placeholder-gray-500 rounded-full"
+          />
+          <input
+            type="email"
+            placeholder="E-mail cím"
+            className="w-full p-4 placeholder-gray-500 rounded-full"
+          />
+          <input
+            type="tel"
+            placeholder="Telefonszám"
+            className="w-full p-4 placeholder-gray-500 rounded-full"
+          />
+          <div className="w- flex items-center space-x-2">
+            <input type="checkbox" />
+            <label className="italic">
+              Hozzájárulok a megadott adataim kapcsolatfelvétel céljából történő
+              kezeléséhez.
+            </label>
           </div>
-          <div className="ml-3 mt-3">
-            <span
-              className={`${lato.className} bg-gradient-to-br from-customStart to-customEnd p-2 rounded-full text-white px-3 py-2 md:px-4 md:py-3 mt-3 uppercase text-xs md:text-sm font-bold`}
-            >
-              Ajánlatot kérek
-            </span>
+          <button className="bg-cyellow w-2/4 p-2 text-white rounded-full">
+            Küldés
+          </button>
+        </div>
+      </div>
+
+      <div className="w-full bg-fgrey flex flex-wrap p-8 text-white">
+        <div className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
+          <div className="flex items-center">
+            <Image
+              src={logo}
+              alt="logo"
+              width={75}
+              height={75}
+              className="m-3"
+            />
+            <h1 className="text-white font-bold text-xl ml-2">N&M Web</h1>
+          </div>
+          <p className="text-white">
+            Ahol a kreatív megoldások, egyedi ötletek megvalósításra kerülnek.
+            Megoldásainkat azok az üzemeltetők választják, akiknek fontos az
+            egyedi megjelenés és a működés hosszú távon.
+          </p>
+        </div>
+        <div className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
+          <h3 className="text-white font-bold text-xl">Navigáció</h3>
+          <ul className="space-y-2">
+            <li className="hover:text-gray-400 cursor-pointer">Blog</li>
+            <li className="hover:text-gray-400 cursor-pointer">Kapcsolat</li>
+            <li className="hover:text-gray-400 cursor-pointer">Rólunk</li>
+            <li className="hover:text-gray-400 cursor-pointer">Csomagok</li>
+          </ul>
+        </div>
+        <div className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
+          <h3 className="text-white font-bold text-xl">Kapcsolat</h3>
+          <div className="flex items-center space-x-2">
+            <Image src={email} alt="email logo" className="w-6 h-6" />
+            <p>email@email.com</p>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Image src={telo} alt="phone logo" className="w-6 h-6" />
+            <p>+36704228587</p>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Image src={facebook} alt="facebook logo" className="w-6 h-6" />
+            <p>facebook</p>
           </div>
         </div>
-        <div className="w-full md:w-1/2 flex p-2">
-          <Image
-            src={team}
-            alt="logo"
-            className="w-full h-full object-contain"
-          />
+        <div className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
+          <h3 className="text-white font-bold text-xl">Egyéb linkek</h3>
+          <p className="hover:text-gray-400 cursor-pointer">FAQ</p>
+        </div>
+        <div className="w-full h-[25px] bg-fgrey text-white pl-4 text-xs flex items-center justify-center">
+          COPYRIGHT @ 2024 Minden jog fenttartva
         </div>
       </div>
 
