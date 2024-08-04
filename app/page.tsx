@@ -29,15 +29,15 @@ export default function Home() {
       <div className="w-full flex flex-col md:flex-row md:h-[450px]">
         <div className="w-full md:w-1/2 flex items-center justify-center p-4">
           <div>
-            <h3 className="text-2xl md:text-3xl font-bold m-3">
+            <h3 className={`${poppins.className} text-2xl md:text-3xl font-bold m-3`}>
               Egyedi webfejlesztés
             </h3>
-            <p className="text-base md:text-lg m-3 leading-5">
+            <p className={`${lato.className} text-base md:text-lg m-3 leading-5`}>
               Ahol a kreatív megoldások, egyedi ötletek megvalósításra kerülnek.
               Megoldásainkat azok az üzemeltetők választják, akiknek fontos az
               egyedi megjelenés és a működés hosszú távon.
             </p>
-            <span className="inline-flex items-center border-cyellow border rounded-full justify-center px-3 py-2 md:px-4 md:py-3 mx-4 mt-3 uppercase text-xs md:text-sm text-cyellow font-bold">
+            <span className={`${inter.className} inline-flex items-center border-cyellow border rounded-full justify-center px-3 py-2 md:px-4 md:py-3 mx-4 mt-3 uppercase text-xs md:text-sm text-cyellow font-bold`}>
               Tudj meg többet{" "}
               <Image
                 src={downArrow}
@@ -49,7 +49,7 @@ export default function Home() {
             </span>
             <Link
               href="/contact"
-              className={`${lato.className} bg-gradient-to-br from-customStart to-customEnd p-2 rounded-full text-white px-3 py-2 md:px-4 md:py-3 mx-4 mt-3 uppercase text-xs md:text-sm font-bold`}
+              className={`${inter.className} bg-gradient-to-br from-customStart to-customEnd p-2 rounded-full text-white px-3 py-2 md:px-4 md:py-3 mx-4 mt-3 uppercase text-xs md:text-sm font-bold`}
             >
               Ajánlatot kérek
             </Link>
@@ -78,7 +78,7 @@ export default function Home() {
         <div className="w-full md:w-1/2 flex items-center justify-center p-4">
           <div>
             <div className="flex">
-              <h3 className="text-2xl md:text-3xl font-bold m-3">
+              <h3 className={`${poppins.className} text-2xl md:text-3xl font-bold m-3`}>
                 Miért van szüksége egy vállalkozásnak weboldalra?
               </h3>
               <Image
@@ -87,14 +87,14 @@ export default function Home() {
                 className="-rotate-12 translate-y-5"
               />
             </div>
-            <p className="text-base md:text-lg m-3 leading-5">
+            <p className={`${lato.className} text-base md:text-lg m-3 leading-5`}>
               Egy vállalkozásnak weboldalra van szüksége, mert ez biztosítja az
               online jelenlétet és növeli a hitelességet. Lehetővé teszi a
               termékek és szolgáltatások bemutatását, valamint az ügyfelekkel
               való kapcsolattartást. Emellett a jól optimalizált weboldal segít
               az új ügyfelek megszerzésében és az üzleti növekedésben.
             </p>
-            <Link href="/blog" className="inline-flex items-center border-cyellow border rounded-full justify-center px-3 py-2 md:px-4 md:py-3 mx-3 mt-3 uppercase text-xs md:text-sm text-cyellow font-bold">
+            <Link href="/blog" className={`${inter.className} inline-flex items-center border-cyellow border rounded-full justify-center px-3 py-2 md:px-4 md:py-3 mx-3 mt-3 uppercase text-xs md:text-sm text-cyellow font-bold`}>
               Tovább a blogra
             </Link>
           </div>
@@ -102,17 +102,17 @@ export default function Home() {
       </div>
 
       <div className="text-center items-center mt-[35px] p-4 mt-24 mb-24">
-        <h3 className="text-2xl md:text-3xl font-bold m-3">
+        <h3 className={`${poppins.className} text-2xl md:text-3xl font-bold m-3`}>
           Miért válassz minket?
         </h3>
         <div className="flex flex-wrap justify-center">
           <div className="items-center justify-center flex flex-col mx-7 md:mx-12">
             <Image src={pontossag} alt="pontossag" width={65} className="m-3" />
-            <span className="font-bold">Pontosság</span>
+            <span className={`${lato.className} font-bold`}>Pontosság</span>
           </div>
           <div className="items-center justify-center flex flex-col mx-7 md:mx-12">
             <Image src={gyorsasag} alt="gyorsasag" width={65} className="m-3" />
-            <span className="font-bold">Gyorsaság</span>
+            <span className={`${lato.className} font-bold`}>Gyorsaság</span>
           </div>
           <div className="items-center justify-center flex flex-col mx-7 md:mx-12">
             <Image
@@ -121,7 +121,7 @@ export default function Home() {
               width={65}
               className="m-3"
             />
-            <span className="font-bold">Alacsony ár</span>
+            <span className={`${lato.className} font-bold`}>Alacsony ár</span>
           </div>
           <div className="items-center justify-center flex flex-col mx-7 md:mx-12">
             <Image
@@ -130,7 +130,7 @@ export default function Home() {
               width={65}
               className="m-3"
             />
-            <span className="font-bold">Megbízhatóság</span>
+            <span className={`${lato.className} font-bold`}>Megbízhatóság</span>
           </div>
         </div>
       </div>
@@ -138,24 +138,24 @@ export default function Home() {
       <div className="w-full flex flex-col md:flex-row md:h-[450px] bg-cyellow bg-opacity-10 p-10">
         <div className="w-full md:w-1/2 flex p-4 flex-wrap">
           <div>
-            <h6 className="text-cyellow uppercase ml-3">Egyedi ajánlat!</h6>
-            <h3 className="text-2xl md:text-3xl font-bold m-3">
+            <h6 className={`${inter.className} text-cyellow uppercase ml-3`}>Egyedi ajánlat!</h6>
+            <h3 className={`${poppins.className} text-2xl md:text-3xl font-bold m-3`}>
               Webfejlesztés szinte ingyen!
             </h3>
-            <p className="text-base md:text-lg ml-3 leading-5">
+            <p className={`${lato.className} text-base md:text-lg ml-3 leading-5`}>
               Az N&M Web elindulása alkalmából teljesen ingyenes fejlesztési
               költségi akciót hírdetünk. Célünk, hogy{" "}
               <span className="text-cyellow">együtt növekedjünk.</span> Így az
               első 3 ügyfélnek , fejlesztési költségektől mentesen készítünk
               weboldalt.
             </p>
-            <p className="text-cyellow font-bold ml-3 text-xl">
+            <p className={`${lato.className} text-cyellow font-bold ml-3 text-xl`}>
               Ne hagyd ki ezt az egyedi ajánlatot, és kérj ajánlatot még ma!
             </p>
           </div>
           <div className="ml-3 mt-3">
             <span
-              className={`${lato.className} bg-gradient-to-br from-customStart to-customEnd p-2 rounded-full text-white px-3 py-2 md:px-4 md:py-3 mt-3 uppercase text-xs md:text-sm font-bold`}
+              className={`${inter.className} bg-gradient-to-br from-customStart to-customEnd p-2 rounded-full text-white px-3 py-2 md:px-4 md:py-3 mt-3 uppercase text-xs md:text-sm font-bold`}
             >
               Ajánlatot kérek
             </span>
@@ -171,17 +171,17 @@ export default function Home() {
       </div>
 
       <div className="text-center items-center mt-[35px] p-4">
-        <h3 className="text-2xl md:text-3xl font-bold m-3 uppercase">
+        <h3 className={`${poppins.className} text-2xl md:text-3xl font-bold m-3 uppercase`}>
           Lássuk milyen csomagok közül válogathatsz
         </h3>
-        <p>Hogy megtaláld számodra a legjobbat.</p>
+        <p className={`${lato.className}`}>Hogy megtaláld számodra a legjobbat.</p>
 
         <div className="flex flex-wrap justify-center items-center">
           <div className="items-center justify-center flex flex-col m-4 border rounded-2xl p-3 h-[500px] w-[270px]">
-            <h4>Statikus weboldal</h4>
-            <p>Egyszerű weboldal, statikus tartalommal</p>
+            <h4 className={`${inter.className} `}>Statikus weboldal</h4>
+            <p className={`${lato.className} `}>Egyszerű weboldal, statikus tartalommal</p>
             <div className="border rounded-2xl bg-cyellow bg-opacity-20 w-3/4 mx-2 my-4 p-3 h-[329px] w-[245px] flex flex-col justify-between">
-              <ul className="my-4 text-left flex-grow space-y-4">
+              <ul className={`${lato.className} my-4 text-left flex-grow space-y-4`}>
                 <li className="flex items-center justify-start">
                   <Image src={iksz} alt="logo" className="mr-2" />
                   Admin oldal
@@ -203,17 +203,17 @@ export default function Home() {
                   Egyedi design
                 </li>
               </ul>
-              <span className="uppercase bg-white text-cyellow font-bold rounded-full p-2 m-4">
+              <span className={`${inter.className} uppercase bg-white text-cyellow font-bold rounded-full p-2 m-4`}>
                 Érdeklődöm
               </span>
             </div>
           </div>
 
           <div className="items-center justify-center flex flex-col m-4 border rounded-2xl p-3 h-[539px] w-[270px] bg-gradient-to-br from-customStart to-customEnd">
-            <h4>Normál Weboldal</h4>
-            <p>Normál weboldal, vállalkozásoknak.</p>
+            <h4 className={`${inter.className} `}>Normál Weboldal</h4>
+            <p className={`${lato.className} `}>Normál weboldal, vállalkozásoknak.</p>
             <div className="border rounded-2xl w-3/4 bg-white mx-2 my-4 p-3 h-[355px] w-[245px] flex flex-col justify-between">
-              <ul className="my-4 text-left flex-grow space-y-4">
+              <ul className={`${lato.className} my-4 text-left flex-grow space-y-4`}>
                 <li className="flex items-center justify-start">
                   <Image src={pipa} alt="logo" className="mr-2" />
                   Admin oldal
@@ -235,20 +235,20 @@ export default function Home() {
                   Egyedi design
                 </li>
               </ul>
-              <span className="uppercase bg-white text-cyellow font-bold rounded-full p-2 m-4">
+              <span className={`${inter.className} uppercase bg-white text-cyellow font-bold rounded-full p-2 m-4`}>
                 Érdeklődöm
               </span>
             </div>
           </div>
 
           <div className="items-center justify-center flex flex-col m-4 border rounded-2xl p-3 h-[500px] w-[270px]">
-            <h4>Egyedi ötlet</h4>
-            <p>Ha egyedi ötleted van, abban is segítünk</p>
+            <h4 className={`${inter.className} `}>Egyedi ötlet</h4>
+            <p className={`${lato.className} `}>Ha egyedi ötleted van, abban is segítünk</p>
             <div className="border rounded-2xl bg-cyellow bg-opacity-20 w-3/4 mx-2 my-4 p-3 h-[329px] w-[245px] flex flex-col justify-between">
-              <p className="text-center flex items-center justify-center flex-grow">
+              <p className={`${lato.className} text-center flex items-center justify-center flex-grow`}>
                 Lehetőségek kapcsán kérlek érdeklődj!
               </p>
-              <span className="uppercase bg-white text-cyellow font-bold rounded-full p-2 m-4">
+              <span className={`${inter.className} uppercase bg-white text-cyellow font-bold rounded-full p-2 m-4`}>
                 Érdeklődöm
               </span>
             </div>
@@ -269,10 +269,10 @@ export default function Home() {
 
         <div className="w-full md:w-1/2 flex items-center justify-center p-4">
           <div>
-            <h3 className="text-2xl md:text-3xl font-bold m-3">
+            <h3 className={`${poppins.className} text-2xl md:text-3xl font-bold m-3`}>
               Rólunk egy pár szó
             </h3>
-            <p className="text-base md:text-lg m-3 leading-5">
+            <p className={`${lato.className} text-base md:text-lg m-3 leading-5`}>
               Csapatunk 2024ben alakult, jelenleg 2főt számlál. Mögöttünk több
               év fejlesztésben szerzett tapasztalat. Csapatunk tagjai dolgoztak
               már egészségügyi szoftvereken,időpont foglaló rendszereken,
@@ -280,7 +280,7 @@ export default function Home() {
               érdekesebbnél érdekesebb projekteket. Ha kérdésed van nyugodtan
               keress minket
             </p>
-            <span className="inline-flex items-center border-cyellow border rounded-full justify-center px-3 py-2 md:px-4 md:py-3 mx-3 mt-3 uppercase text-xs md:text-sm text-cyellow font-bold">
+            <span className={`${inter.className} inline-flex items-center border-cyellow border rounded-full justify-center px-3 py-2 md:px-4 md:py-3 mx-3 mt-3 uppercase text-xs md:text-sm text-cyellow font-bold`}>
               Kérdésem Van
             </span>
           </div>

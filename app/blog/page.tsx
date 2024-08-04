@@ -75,7 +75,7 @@ export default function Blogs() {
         <h1 className="font-bold text-4xl">Hasznos cikkek, információk</h1>
       </div>
 
-      <div className="w-full border flex flex-wrap justify-center">
+      <div className="w-full border flex justify-center flex-wrap">
         {cardsData.map((card, index) => (
           <Card
             key={index}

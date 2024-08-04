@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { inter, lato, poppins } from "../_Utils/fonts";
 
 import plus from "../_Assets/plus.png";
 
@@ -16,14 +17,14 @@ export default function ToggleDiv() {
   return (
     <>
       <div className="w-full bg-cyellow p-10 flex justify-center items-center flex-col">
-        <h3 className="text-2xl md:text-3xl font-bold m-3 text-white text-center">
+        <h3 className={`${poppins.className} text-2xl md:text-3xl font-bold m-3 text-white text-center`}>
           Referenciák
         </h3>
-        <p className="text-center w-1/2 m-3">
+        <p className={`${poppins.className} text-center w-1/2 m-3`}>
           Frissen indult vállalkozásként, a munka tapasztalatunkok kívül sokat
-          nem tudunk mutatni. Ezeket <span className="font-bold">itt</span>{" "}
+          nem tudunk mutatni. Ezeket <span className={`${poppins.className} font-bold`}>itt</span>{" "}
           megtekintheted. Legyen a{" "}
-          <span className="text-white font-bold">Tied</span> a megtiszteltetés,
+          <span className={`${poppins.className} text-white font-bold`}>Tied</span> a megtiszteltetés,
           hogy elsők között választod a Mi szolgáltatásainkat.{" "}
         </p>
 
@@ -32,16 +33,16 @@ export default function ToggleDiv() {
           onClick={toggleVisibility}
         >
           <Image src={plus} alt="logo" className="mb-4" />
-          <p className="text-center text-white mt-4">A te vállalkozásod</p>
+          <p className={`${poppins.className} text-center text-white mt-4`}>A te vállalkozásod</p>
         </div>
       </div>
 
       {isVisible && (
         <div className="flex flex-col items-center space-y-4 m-8 sm:m-4 md:m-6 lg:m-8 xl:m-10">
-          <h3 className="text-3xl font-bold text-center">
+          <h3 className={`${poppins.className} text-3xl font-bold text-center`}>
             Megtetted első lépésed,
           </h3>
-          <p className="text-center">
+          <p className={`${inter.className} text-center`}>
             A Siker felé, vedd fel velünk a kapcsolatot!
           </p>
           <div className="bg-cyellow bg-opacity-20 rounded-xl w-full sm:w-3/4 md:w-2/4 lg:w-2/4 flex flex-col items-center justify-center p-8 space-y-6">
