@@ -20,6 +20,7 @@ import iksz from "./_Assets/iksz.png";
 import ToggleDiv from "./_Components/ToggleDiv";
 import Footer from "./_Components/Footer";
 import Header from "./_Components/Header";
+import PackageCard from "./_Components/PackageCard";
 
 export default function Home() {
   return (
@@ -177,83 +178,32 @@ export default function Home() {
         <p>Hogy megtaláld számodra a legjobbat.</p>
 
         <div className="flex flex-wrap justify-center items-center">
-          <div className="items-center justify-center flex flex-col m-4 border rounded-2xl p-3 h-[500px] w-[270px]">
-            <h4>Statikus weboldal</h4>
-            <p>Egyszerű weboldal, statikus tartalommal</p>
-            <div className="border rounded-2xl bg-cyellow bg-opacity-20 w-3/4 mx-2 my-4 p-3 h-[329px] w-[245px] flex flex-col justify-between">
-              <ul className="my-4 text-left flex-grow space-y-4">
-                <li className="flex items-center justify-start">
-                  <Image src={iksz} alt="logo" className="mr-2" />
-                  Admin oldal
-                </li>
-                <li className="flex items-center justify-start">
-                  <Image src={iksz} alt="logo" className="mr-2" />
-                  Oldal szerkeszthetőség
-                </li>
-                <li className="flex items-center justify-start">
-                  <Image src={pipa} alt="logo" className="mr-2" />
-                  Gyors fejlesztési idő
-                </li>
-                <li className="flex items-center justify-start">
-                  <Image src={pipa} alt="logo" className="mr-2" />
-                  Tech support
-                </li>
-                <li className="flex items-center justify-start">
-                  <Image src={pipa} alt="logo" className="mr-2" />
-                  Egyedi design
-                </li>
-              </ul>
-              <span className="uppercase bg-white text-cyellow font-bold rounded-full p-2 m-4">
-                Érdeklődöm
-              </span>
-            </div>
-          </div>
 
-          <div className="items-center justify-center flex flex-col m-4 border rounded-2xl p-3 h-[539px] w-[270px] bg-gradient-to-br from-customStart to-customEnd">
-            <h4>Normál Weboldal</h4>
-            <p>Normál weboldal, vállalkozásoknak.</p>
-            <div className="border rounded-2xl w-3/4 bg-white mx-2 my-4 p-3 h-[355px] w-[245px] flex flex-col justify-between">
-              <ul className="my-4 text-left flex-grow space-y-4">
-                <li className="flex items-center justify-start">
-                  <Image src={pipa} alt="logo" className="mr-2" />
-                  Admin oldal
-                </li>
-                <li className="flex items-center justify-start">
-                  <Image src={pipa} alt="logo" className="mr-2" />
-                  Oldal szerkeszthetőség
-                </li>
-                <li className="flex items-center justify-start">
-                  <Image src={pipa} alt="logo" className="mr-2" />
-                  Gyors fejlesztési idő
-                </li>
-                <li className="flex items-center justify-start">
-                  <Image src={pipa} alt="logo" className="mr-2" />
-                  Tech support
-                </li>
-                <li className="flex items-center justify-start">
-                  <Image src={pipa} alt="logo" className="mr-2" />
-                  Egyedi design
-                </li>
-              </ul>
-              <span className="uppercase bg-white text-cyellow font-bold rounded-full p-2 m-4">
-                Érdeklődöm
-              </span>
-            </div>
-          </div>
+          <PackageCard 
+            title="Statikus Weboldal"
+            desription="Egyszerű weboldal, statikus tartalommal."
+            items={[{avaliable:false,value:"Admin oldal"},
+              {avaliable:false,value:"Oldal szerkeszthetőség"},
+              {avaliable:true,value:"Gyors fejlesztési idő"},
+              {avaliable:true,value:"Tech support"},
+              {avaliable:true,value:"Egyedi design"},
+            ]}></PackageCard>
 
-          <div className="items-center justify-center flex flex-col m-4 border rounded-2xl p-3 h-[500px] w-[270px]">
-            <h4>Egyedi ötlet</h4>
-            <p>Ha egyedi ötleted van, abban is segítünk</p>
-            <div className="border rounded-2xl bg-cyellow bg-opacity-20 w-3/4 mx-2 my-4 p-3 h-[329px] w-[245px] flex flex-col justify-between">
-              <p className="text-center flex items-center justify-center flex-grow">
-                Lehetőségek kapcsán kérlek érdeklődj!
-              </p>
-              <span className="uppercase bg-white text-cyellow font-bold rounded-full p-2 m-4">
-                Érdeklődöm
-              </span>
-            </div>
+          <PackageCard 
+            title="Normál Weboldal"
+            desription="Normál weboldal, vállalkozásoknak."
+            items={[{avaliable:true,value:"Admin oldal"},
+              {avaliable:true,value:"Oldal szerkeszthetőség"},
+              {avaliable:true,value:"Gyors fejlesztési idő"},
+              {avaliable:true,value:"Tech support"},
+              {avaliable:true,value:"Egyedi design"},
+            ]}></PackageCard>
+
+          <PackageCard 
+            title="Egyedi Ötlet"
+            desription="Ha egyedi ötleted van,abban is segítünk"
+            items={[{value:"Lehetőségek kapcsán kérlek érdeklődj!",avaliable:null}]}></PackageCard>
           </div>
-        </div>
       </div>
 
       <div className="w-full flex flex-col md:flex-row md:h-[450px] md:mt-0">

@@ -11,3 +11,31 @@
 .poppins{
   font-family: var(--font-poppins),
 }
+
+
+
+.extended{
+  /* height: 100%;
+  animation-name: extendDiv;
+  animation-duration: 2s; */
+  height: 500px;
+
+}
+.closed{
+  height: 0px;
+  /* height: 0%;
+  animation-name: closeDiv;
+  animation-duration: 2s; */
+}
+
+
+@keyframes extendDiv {
+  from {height: 0%;}
+  to {height: 100%;}
+}
+
+@keyframes closeDiv {
+  from {height: 100%;}
+  to {height:0%;}
+}
+
