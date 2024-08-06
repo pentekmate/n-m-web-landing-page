@@ -1,108 +1,47 @@
-"use client";
-
-import { useState } from "react";
-import logo from "../_Assets/logo-no-background.png";
-import logoWHite from "../_Assets/logo-color.png";
-
-import email from "../_Assets/email-black.png";
-import telo from "../_Assets/mobile-black.png";
-import facebook from "../_Assets/facebook-black.png";
-
-import Open from "../_Assets/open.png";
-import Close from "../_Assets/close.png";
-
-import { lato } from "../_Utils/fonts";
 import Image from "next/image";
-import Link from "next/link";
-import { Linden_Hill } from "next/font/google";
+import Button from "./Button";
+import downArrow from "../_Assets/down-arrow.png";
+import creator from "../_Assets/Website Creator-rafiki.png";
+import { lato, poppins } from "../_Utils/fonts";
 
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Header(){
+    return(
+        <div className="w-full flex flex-col  md:px-[90px] md:flex-row h-fit">
+            <div className="w-full md:w-1/2 flex items-center justify-center">
+                <div className="flex justify-center items-center md:items-start flex-col gap-8 md:gap-20">
+                    <div className="flex  items-center md:items-start flex-col gap-8">
+                    <h3 className={`text-[2rem] md:text-[30px] lg:text-[61px] font-bold  ${poppins.className}`}>
+                        Egyedi webfejlesztés
+                    </h3>
+                    <p className={`text-base md:text-start text-center px-30 text-fgrey lg:text-[30px] font-light  lg:leading-[40px] ${lato.className}`}>
+                        Ahol a kreatív megoldások, egyedi ötletek megvalósításra kerülnek. <br />
+                        Megoldásainkat azok az üzemeltetők választják, akiknek <br /> fontos az
+                        egyedi megjelenés és a működés hosszú távon.
+                    </p>
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+                    </div>
 
-  return (
-    <div className="relative w-full flex flex-wrap items-center p-3">
-      <Link href="/">
-        <Image src={logo} alt="logo" width={75} height={75} className="m-3" />
-      </Link>
-      <div className="ml-auto flex items-center">
-        <div className="hidden  sm:flex space-x-3">
-          <Link className="hover:font-bold transition-all min-w-[100px]" href="/">Csomagok</Link>
-          <Link className="hover:font-bold transition-all min-w-[100px]" href="/contact">Kapcsolat</Link>
-          <Link className="hover:font-bold transition-all min-w-[100px]" href="/">Referencia</Link>
-        </div>
-        <div className="hidden sm:block ml-28 mr-9">
-          <Link
-            href="/contact"
-            className={`${lato.className} bg-gradient-to-br from-customStart to-customEnd p-2 rounded-full text-white`}
-          >
-            Ajánlatot kérek
-          </Link>
-        </div>
-        <div className="sm:hidden flex items-center">
-          <button onClick={toggleMenu} className="focus:outline-none">
-            {isOpen ? null : (
-              <Image src={Open} alt="logo" width={35} className="m-3" />
-            )}
-          </button>
-        </div>
+                    <div className="flex flex-col w-full md:flex-row md:justify-start justify-center gap-4">
+                    <Button text="tudj meg többet" type="secondary" icon={
+                        <Image
+                        src={downArrow}
+                        alt="logo"
+                        width={15}
+                        height={15}
+                        className="ml-2 md:ml-3"
+                    />}></Button>
+                    <Button text="ajánlatot kérek" type="primary"></Button>
+                    </div>
+
+                </div>
+            </div>
+            <div className="w-full md:w-1/2 flex p-4">
+            <Image
+                src={creator}
+                alt="logo"
+                className="w-full h-full object-contain"
+            />
+            </div>
       </div>
-      {isOpen && (
-        <div className="fixed inset-0 bg-cyellow bg-opacity-90 flex flex-col z-50 p-4">
-          <Image
-            src={logoWHite}
-            alt="logo"
-            width={75}
-            height={75}
-            className="mb-6"
-          />
-          <Image
-            onClick={toggleMenu}
-            src={Close}
-            alt="logo"
-            width={35}
-            className="absolute top-4 right-4 text-white text-3xl"
-          />
-          <div className="flex flex-col">
-            <h3 className="text-2xl font-bold mb-4">Navigáció</h3>
-            <ul className="list-disc list-inside mb-6">
-              <li className="text-xl font-bold mb-2">
-                <Link href="/">Főoldal</Link>
-              </li>
-              <li className="text-xl font-bold mb-2">
-                <Link href="/">Csomagok</Link>
-              </li>
-              <li className="text-xl font-bold mb-2">
-                <Link href="/contact">Kapcsolat</Link>
-              </li>
-              <li className="text-xl font-bold mb-2">
-                <Link href="/">Referencia</Link>
-              </li>
-            </ul>
-            <div className="text-white text-center items-center border-white inline-flex border rounded-full px-4 py-2 w-3/4 uppercase text-sm font-bold flex  justify-center w-full border cursor-pointer">
-              <Link href="/contact">Ajánlatot kérek</Link>
-            </div>
-            <div className="flex flex-col mt-6 space-y-4">
-              <h3 className="text-2xl font-bold mb-4">Kapcsolat</h3>
-              <div className="flex items-center space-x-2">
-                <Image src={email} alt="email logo" className="w-6 h-6" />
-                <p className="text-lg font-semibold">email@email.com</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Image src={telo} alt="phone logo" className="w-6 h-6" />
-                <p className="text-lg font-semibold">+36704228587</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Image src={facebook} alt="facebook logo" className="w-6 h-6" />
-                <p className="text-lg font-semibold">facebook</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
+    )
 }

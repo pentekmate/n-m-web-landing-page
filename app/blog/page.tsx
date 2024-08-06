@@ -3,7 +3,7 @@ import creator from "../_Assets/Wall post-rafiki.png";
 import Penz from "../_Assets/penz.jpg";
 
 import Footer from "../_Components/Footer";
-import Header from "../_Components/Header";
+import Header from "../_Components/Navigation";
 import Card from "../_Components/Card";
 
 export default function Blogs() {

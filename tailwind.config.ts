@@ -34,6 +34,10 @@ const config: Config = {
           '100%': { opacity: '0' },
         },
       },
+      fontSize:{
+        "h2":"48px",
+        "p2":"30px"
+      }
     },
   },
   plugins: [],

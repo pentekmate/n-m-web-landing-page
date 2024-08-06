@@ -1,5 +1,5 @@
 import Footer from "../_Components/Footer";
-import Header from "../_Components/Header";
+import Header from "../_Components/Navigation";
 import { inter, lato, poppins } from "../_Utils/fonts";
 
 import Image from "next/image";
