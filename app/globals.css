@@ -15,18 +15,41 @@
 
 
 .extended{
-  /* height: 100%;
-  animation-name: extendDiv;
-  animation-duration: 2s; */
+
   height: 500px;
 
 }
 .closed{
   height: 0px;
-  /* height: 0%;
-  animation-name: closeDiv;
-  animation-duration: 2s; */
+
 }
+
+.buttonAnimation{ 
+  height: 100%;
+  position: absolute;
+  bottom:-40px;
+  width: 100%;
+  border-radius: 73px;
+  transition: all 400ms;
+}
+.primary-button:hover>.buttonAnimation{
+  height: 100% !important;
+  background-color: white !important;
+  transition: all 400ms;
+  bottom:0;
+
+}
+.primary-button:hover>p{
+  color: #F5BA41  !important;
+
+}
+.primary-button:hover{
+  border:#F5BA41 solid 1px;
+  transition: all 300ms
+}
+
+
+
 
 
 @keyframes extendDiv {
@@ -38,4 +61,11 @@
   from {height: 100%;}
   to {height:0%;}
 }
+
+@keyframes extendDiv {
+  from {height: 0%;}
+  to {height: 100%;}
+}
+
+
 

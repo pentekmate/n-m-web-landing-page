@@ -21,39 +21,39 @@ import ToggleDiv from "./_Components/ToggleDiv";
 import Footer from "./_Components/Footer";
 import Header from "./_Components/Header";
 import PackageCard from "./_Components/PackageCard";
+import Button from "./_Components/Button";
 
 export default function Home() {
   return (
     <>
       <Header />
       
-      <div className="w-full flex flex-col md:flex-row md:h-[450px]">
-        <div className="w-full md:w-1/2 flex items-center justify-center p-4">
-          <div>
-            <h3 className="text-2xl md:text-3xl font-bold m-3">
-              Egyedi webfejlesztés
-            </h3>
-            <p className="text-base md:text-lg m-3 leading-5">
-              Ahol a kreatív megoldások, egyedi ötletek megvalósításra kerülnek.
-              Megoldásainkat azok az üzemeltetők választják, akiknek fontos az
-              egyedi megjelenés és a működés hosszú távon.
-            </p>
-            <span className="inline-flex items-center border-cyellow border rounded-full justify-center px-3 py-2 md:px-4 md:py-3 mx-4 mt-3 uppercase text-xs md:text-sm text-cyellow font-bold">
-              Tudj meg többet{" "}
-              <Image
-                src={downArrow}
-                alt="logo"
-                width={15}
-                height={15}
-                className="ml-2 md:ml-3"
-              />
-            </span>
-            <Link
-              href="/contact"
-              className={`${lato.className} bg-gradient-to-br from-customStart to-customEnd p-2 rounded-full text-white px-3 py-2 md:px-4 md:py-3 mx-4 mt-3 uppercase text-xs md:text-sm font-bold`}
-            >
-              Ajánlatot kérek
-            </Link>
+      <div className="w-full flex flex-col  md:px-[90px] md:flex-row h-fit">
+        <div className="w-full md:w-1/2 flex items-center justify-center">
+          <div className="flex justify-center items-center md:items-start flex-col gap-20">
+            <div className="flex  items-center md:items-start flex-col gap-8">
+              <h3 className={`text-2xl md:text-[61px] font-bold  ${poppins.className}`}>
+                Egyedi webfejlesztés
+              </h3>
+              <p className={`text-base md:text-start text-center px-30 text-fgrey md:text-[30px] font-light  md:leading-[40px] ${lato.className}`}>
+                Ahol a kreatív megoldások, egyedi ötletek megvalósításra kerülnek. <br />
+                Megoldásainkat azok az üzemeltetők választják, akiknek <br /> fontos az
+                egyedi megjelenés és a működés hosszú távon.
+              </p>
+            
+            </div>
+            
+            <div className="flex gap-4">
+              <Button text="tudj meg többet" type="secondary" icon={ <Image
+                  src={downArrow}
+                  alt="logo"
+                  width={15}
+                  height={15}
+                  className="ml-2 md:ml-3"
+                />}></Button>
+              <Button text="ajánlatot kérek" type="primary"></Button>
+            </div>
+         
           </div>
         </div>
         <div className="w-full md:w-1/2 flex p-4">
