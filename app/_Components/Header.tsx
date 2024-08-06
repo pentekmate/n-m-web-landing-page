@@ -1,12 +1,16 @@
+
 import Image from "next/image";
 import Button from "./Button";
 import downArrow from "../_Assets/down-arrow.png";
 import creator from "../_Assets/Website Creator-rafiki.png";
 import { lato, poppins } from "../_Utils/fonts";
 
+import { useEffect } from "react";
+
 export default function Header(){
+  
     return(
-        <div className="w-full flex flex-col  md:px-[90px] md:flex-row h-fit">
+        <div data-aos="fade-up" className="w-full flex flex-col  md:px-[90px] md:flex-row h-fit">
             <div className="w-full md:w-1/2 flex items-center justify-center">
                 <div className="flex justify-center items-center md:items-start flex-col gap-8 md:gap-20">
                     <div className="flex  items-center md:items-start flex-col gap-8">

@@ -3,7 +3,7 @@ import PackageCard from "./PackageCard";
 
 export default function PackageOffers(){
     return(
-        <div className="text-center flex flex-col gap-6 items-center mt-[35px] p-4">
+        <div data-aos="fade-right" className="text-center flex flex-col gap-6 items-center mt-[35px] p-4">
         <h3 className={`${poppins.className} text-2xl  md:text-3xl font-bold m-3 uppercase`}>
           Lássuk milyen csomagok közül válogathatsz
         </h3>

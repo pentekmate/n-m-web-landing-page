@@ -1,28 +1,26 @@
+"use client"
 import Link from "next/link";
 import { inter, lato, poppins } from "./_Utils/fonts";
 import Image from "next/image";
-
-
-
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 import User from "./_Assets/User research-bro.png";
 
-
-
-
-
-import ToggleDiv from "./_Components/ToggleDiv";
 import Footer from "./_Components/Footer";
-import PackageCard from "./_Components/PackageCard";
-import Button from "./_Components/Button";
 import Navigation from "./_Components/Navigation";
 import Header from "./_Components/Header";
 import ImporantWebsite from "./_Components/ImportantWebsite";
 import WhyChooseUs from "./_Components/WhyChooseUs";
 import SpecialOffer from "./_Components/SpecialOffer";
 import PackageOffers from "./_Components/PackageOffers";
+import Reference from "./_Components/Reference";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(()=>{
+    AOS.init({})
+})
   return (
     <div className="relative">
       <Navigation />
@@ -33,7 +31,7 @@ export default function Home() {
       <PackageOffers></PackageOffers>
     
 
-      <div className="w-full flex flex-col md:flex-row md:h-[450px] md:mt-0">
+      <div data-aos="fade-left" className="w-full flex flex-col md:flex-row md:h-[450px] md:mt-0">
         <div className="w-full md:w-1/2 flex items-center justify-center">
           <div className="w-full md:w-1/2 flex p-4">
             <Image
@@ -64,7 +62,7 @@ export default function Home() {
         </div>
       </div>
 
-      <ToggleDiv />
+      <Reference />
 
       <Footer />
     </div>

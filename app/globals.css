@@ -16,7 +16,7 @@
 
 .extended{
 
-  height: 500px;
+  height: 650px;
 
 }
 .closed{
@@ -65,6 +65,15 @@
 @keyframes extendDiv {
   from {height: 0%;}
   to {height: 100%;}
+}
+
+input:focus{
+  outline: #f5ba41 2px solid !important;
+  outline: none;
+ 
+}
+input::placeholder{
+  font-style: italic;
 }
 
 
