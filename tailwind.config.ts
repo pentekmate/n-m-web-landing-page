@@ -13,6 +13,7 @@ const config: Config = {
         customEnd: '#F5BA41B2',
         cyellow: "#F5BA41",
         fgrey: "#373A40",
+        textGray:"#E6E6E6"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -20,39 +20,40 @@ import iksz from "./_Assets/iksz.png";
 import ToggleDiv from "./_Components/ToggleDiv";
 import Footer from "./_Components/Footer";
 import Header from "./_Components/Header";
+import PackageCard from "./_Components/PackageCard";
+import Button from "./_Components/Button";
 
 export default function Home() {
   return (
     <>
       <Header />
       
-      <div className="w-full flex flex-col md:flex-row md:h-[450px]">
-        <div className="w-full md:w-1/2 flex items-center justify-center p-4">
-          <div>
-            <h3 className={`${poppins.className} text-2xl md:text-3xl font-bold m-3`}>
-              Egyedi webfejlesztés
-            </h3>
-            <p className={`${lato.className} text-base md:text-lg m-3 leading-5`}>
-              Ahol a kreatív megoldások, egyedi ötletek megvalósításra kerülnek.
-              Megoldásainkat azok az üzemeltetők választják, akiknek fontos az
-              egyedi megjelenés és a működés hosszú távon.
-            </p>
-            <span className={`${inter.className} inline-flex items-center border-cyellow border rounded-full justify-center px-3 py-2 md:px-4 md:py-3 mx-4 mt-3 uppercase text-xs md:text-sm text-cyellow font-bold`}>
-              Tudj meg többet{" "}
-              <Image
-                src={downArrow}
-                alt="logo"
-                width={15}
-                height={15}
-                className="ml-2 md:ml-3"
-              />
-            </span>
-            <Link
-              href="/contact"
-              className={`${inter.className} bg-gradient-to-br from-customStart to-customEnd p-2 rounded-full text-white px-3 py-2 md:px-4 md:py-3 mx-4 mt-3 uppercase text-xs md:text-sm font-bold`}
-            >
-              Ajánlatot kérek
-            </Link>
+      <div className="w-full flex flex-col  md:px-[90px] md:flex-row h-fit">
+        <div className="w-full md:w-1/2 flex items-center justify-center">
+          <div className="flex justify-center items-center md:items-start flex-col gap-20">
+            <div className="flex  items-center md:items-start flex-col gap-8">
+              <h3 className={`text-2xl md:text-[61px] font-bold  ${poppins.className}`}>
+                Egyedi webfejlesztés
+              </h3>
+              <p className={`text-base md:text-start text-center px-30 text-fgrey md:text-[30px] font-light  md:leading-[40px] ${lato.className}`}>
+                Ahol a kreatív megoldások, egyedi ötletek megvalósításra kerülnek. <br />
+                Megoldásainkat azok az üzemeltetők választják, akiknek <br /> fontos az
+                egyedi megjelenés és a működés hosszú távon.
+              </p>
+            
+            </div>
+            
+            <div className="flex gap-4">
+              <Button text="tudj meg többet" type="secondary" icon={ <Image
+                  src={downArrow}
+                  alt="logo"
+                  width={15}
+                  height={15}
+                  className="ml-2 md:ml-3"
+                />}></Button>
+              <Button text="ajánlatot kérek" type="primary"></Button>
+            </div>
+         
           </div>
         </div>
         <div className="w-full md:w-1/2 flex p-4">
@@ -177,83 +178,32 @@ export default function Home() {
         <p className={`${lato.className}`}>Hogy megtaláld számodra a legjobbat.</p>
 
         <div className="flex flex-wrap justify-center items-center">
-          <div className="items-center justify-center flex flex-col m-4 border rounded-2xl p-3 h-[500px] w-[270px]">
-            <h4 className={`${inter.className} `}>Statikus weboldal</h4>
-            <p className={`${lato.className} `}>Egyszerű weboldal, statikus tartalommal</p>
-            <div className="border rounded-2xl bg-cyellow bg-opacity-20 w-3/4 mx-2 my-4 p-3 h-[329px] w-[245px] flex flex-col justify-between">
-              <ul className={`${lato.className} my-4 text-left flex-grow space-y-4`}>
-                <li className="flex items-center justify-start">
-                  <Image src={iksz} alt="logo" className="mr-2" />
-                  Admin oldal
-                </li>
-                <li className="flex items-center justify-start">
-                  <Image src={iksz} alt="logo" className="mr-2" />
-                  Oldal szerkeszthetőség
-                </li>
-                <li className="flex items-center justify-start">
-                  <Image src={pipa} alt="logo" className="mr-2" />
-                  Gyors fejlesztési idő
-                </li>
-                <li className="flex items-center justify-start">
-                  <Image src={pipa} alt="logo" className="mr-2" />
-                  Tech support
-                </li>
-                <li className="flex items-center justify-start">
-                  <Image src={pipa} alt="logo" className="mr-2" />
-                  Egyedi design
-                </li>
-              </ul>
-              <span className={`${inter.className} uppercase bg-white text-cyellow font-bold rounded-full p-2 m-4`}>
-                Érdeklődöm
-              </span>
-            </div>
-          </div>
 
-          <div className="items-center justify-center flex flex-col m-4 border rounded-2xl p-3 h-[539px] w-[270px] bg-gradient-to-br from-customStart to-customEnd">
-            <h4 className={`${inter.className} `}>Normál Weboldal</h4>
-            <p className={`${lato.className} `}>Normál weboldal, vállalkozásoknak.</p>
-            <div className="border rounded-2xl w-3/4 bg-white mx-2 my-4 p-3 h-[355px] w-[245px] flex flex-col justify-between">
-              <ul className={`${lato.className} my-4 text-left flex-grow space-y-4`}>
-                <li className="flex items-center justify-start">
-                  <Image src={pipa} alt="logo" className="mr-2" />
-                  Admin oldal
-                </li>
-                <li className="flex items-center justify-start">
-                  <Image src={pipa} alt="logo" className="mr-2" />
-                  Oldal szerkeszthetőség
-                </li>
-                <li className="flex items-center justify-start">
-                  <Image src={pipa} alt="logo" className="mr-2" />
-                  Gyors fejlesztési idő
-                </li>
-                <li className="flex items-center justify-start">
-                  <Image src={pipa} alt="logo" className="mr-2" />
-                  Tech support
-                </li>
-                <li className="flex items-center justify-start">
-                  <Image src={pipa} alt="logo" className="mr-2" />
-                  Egyedi design
-                </li>
-              </ul>
-              <span className={`${inter.className} uppercase bg-white text-cyellow font-bold rounded-full p-2 m-4`}>
-                Érdeklődöm
-              </span>
-            </div>
-          </div>
+          <PackageCard 
+            title="Statikus Weboldal"
+            desription="Egyszerű weboldal, statikus tartalommal."
+            items={[{avaliable:false,value:"Admin oldal"},
+              {avaliable:false,value:"Oldal szerkeszthetőség"},
+              {avaliable:true,value:"Gyors fejlesztési idő"},
+              {avaliable:true,value:"Tech support"},
+              {avaliable:true,value:"Egyedi design"},
+            ]}></PackageCard>
 
-          <div className="items-center justify-center flex flex-col m-4 border rounded-2xl p-3 h-[500px] w-[270px]">
-            <h4 className={`${inter.className} `}>Egyedi ötlet</h4>
-            <p className={`${lato.className} `}>Ha egyedi ötleted van, abban is segítünk</p>
-            <div className="border rounded-2xl bg-cyellow bg-opacity-20 w-3/4 mx-2 my-4 p-3 h-[329px] w-[245px] flex flex-col justify-between">
-              <p className={`${lato.className} text-center flex items-center justify-center flex-grow`}>
-                Lehetőségek kapcsán kérlek érdeklődj!
-              </p>
-              <span className={`${inter.className} uppercase bg-white text-cyellow font-bold rounded-full p-2 m-4`}>
-                Érdeklődöm
-              </span>
-            </div>
+          <PackageCard 
+            title="Normál Weboldal"
+            desription="Normál weboldal, vállalkozásoknak."
+            items={[{avaliable:true,value:"Admin oldal"},
+              {avaliable:true,value:"Oldal szerkeszthetőség"},
+              {avaliable:true,value:"Gyors fejlesztési idő"},
+              {avaliable:true,value:"Tech support"},
+              {avaliable:true,value:"Egyedi design"},
+            ]}></PackageCard>
+
+          <PackageCard 
+            title="Egyedi Ötlet"
+            desription="Ha egyedi ötleted van,abban is segítünk"
+            items={[{value:"Lehetőségek kapcsán kérlek érdeklődj!",avaliable:null}]}></PackageCard>
           </div>
-        </div>
       </div>
 
       <div className="w-full flex flex-col md:flex-row md:h-[450px] md:mt-0">

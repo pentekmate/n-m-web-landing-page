@@ -29,10 +29,10 @@ export default function Header() {
         <Image src={logo} alt="logo" width={75} height={75} className="m-3" />
       </Link>
       <div className="ml-auto flex items-center">
-        <div className="hidden sm:flex space-x-3">
-          <Link href="/">Csomagok</Link>
-          <Link href="/contact">Kapcsolat</Link>
-          <Link href="/">Referencia</Link>
+        <div className="hidden  sm:flex space-x-3">
+          <Link className="hover:font-bold transition-all min-w-[100px]" href="/">Csomagok</Link>
+          <Link className="hover:font-bold transition-all min-w-[100px]" href="/contact">Kapcsolat</Link>
+          <Link className="hover:font-bold transition-all min-w-[100px]" href="/">Referencia</Link>
         </div>
         <div className="hidden sm:block ml-28 mr-9">
           <Link
