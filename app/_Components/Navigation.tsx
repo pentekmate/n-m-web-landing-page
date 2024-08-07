@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../_Assets/logo-no-background.png";
 import logoWHite from "../_Assets/logo-color.png";
 
@@ -14,41 +14,55 @@ import Close from "../_Assets/close.png";
 import { lato } from "../_Utils/fonts";
 import Image from "next/image";
 import Link from "next/link";
-import { Linden_Hill } from "next/font/google";
+import whiteLogo from "../_Assets/logo-white-no-bg.png"
+import Button from "./Button";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [scrolling,setScrolling]=useState<boolean>(false)
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="sticky z-100 top-0 md:px-[90px] w-full flex flex-wrap items-center p-3">
-      <Link href="/">
-        <Image src={logo} alt="logo" width={75} height={75} className="m-3" />
-      </Link>
-      <div className="ml-auto flex items-center">
-        <div className="hidden  sm:flex space-x-3">
-          <Link className="hover:font-bold transition-all min-w-[100px]" href="/">Csomagok</Link>
-          <Link className="hover:font-bold transition-all min-w-[100px]" href="/contact">Kapcsolat</Link>
-          <Link className="hover:font-bold transition-all min-w-[100px]" href="/">Referencia</Link>
-        </div>
-        <div className="hidden sm:block ml-28 mr-9">
-          <Link
-            href="/contact"
-            className={`${lato.className} bg-gradient-to-br from-customStart to-customEnd p-2 rounded-full text-white`}
-          >
-            Ajánlatot kérek
+    <div className={`sticky z-[100] h-[60px] top-0 md:px-[90px] w-full flex  items-center ${scrolling? "navigatorBg" : "navigatorNoBg"}`}>
+      <div className="flex justify-between w-full">
+          <Link href="/">
+            <Image src={scrolling? whiteLogo:logo} alt="logo" width={scrolling?110:75} height={scrolling?100:75} className={`${scrolling?"-mt-3":"m-3"}`} />
           </Link>
-        </div>
-        <div className="sm:hidden flex items-center">
-          <button onClick={toggleMenu} className="focus:outline-none">
-            {isOpen ? null : (
-              <Image src={Open} alt="logo" width={35} className="m-3" />
-            )}
-          </button>
-        </div>
+          <div className="flex  items-center">
+              <div className="hidden  sm:flex space-x-3">
+                <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="/">Csomagok</Link>
+                <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="/contact">Kapcsolat</Link>
+                <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="/">Referencia</Link>
+              </div>
+              <Button text="ajánlatot kérek" 
+              navigate
+              navigateTo="/contact" 
+              type="headerPrimary"></Button>
+            
+              <div className="sm:hidden flex items-center">
+                <button onClick={toggleMenu} className="focus:outline-none">
+                  {isOpen ? null : (
+                    <Image src={Open} alt="logo" width={35} className="m-3" />
+                  )}
+                </button>
+              </div>
+          </div>
       </div>
       {isOpen && (
         <div className="fixed inset-0 bg-cyellow bg-opacity-90 flex flex-col z-50 p-4">

@@ -62,10 +62,7 @@
   to {height:0%;}
 }
 
-@keyframes extendDiv {
-  from {height: 0%;}
-  to {height: 100%;}
-}
+
 
 input:focus{
   outline: #f5ba41 2px solid !important;
@@ -76,5 +73,25 @@ input::placeholder{
   font-style: italic;
 }
 
+.navigatorBg {
+  animation: changeBg 500ms forwards;
+}
+
+.navigatorNoBg {
+  animation: changeBgToTransparent 500ms forwards;
+}
+.navigatorBg>div>div>div>.nav-item{
+  color: white!important;
+}
+
+@keyframes changeBg {
+  from {background-color: transparent;}
+  to {background-color:  #F5BA41;}
+}
+
+@keyframes changeBgToTransparent {
+  from {background-color:#F5BA41 }
+  to {background-color: transparent;}
+}
 
 

@@ -37,7 +37,11 @@ export default function ImporantWebsite(){
               való kapcsolattartást. Emellett a jól optimalizált weboldal segít
               az új ügyfelek megszerzésében és az üzleti növekedésben.
             </p>
-            <Button text="Tovább a blogra" type="secondary"></Button>
+            <Button 
+            text="Tovább a blogra" 
+            type="secondary"
+            navigate
+            navigateTo="/blog"></Button>
           </div>
         </div>
       </div>
