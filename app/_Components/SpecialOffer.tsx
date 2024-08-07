@@ -27,7 +27,11 @@ export default function SpecialOffer(){
             </p>
           </div>
           <div className="ml-3 mt-3">
-            <Button text="Ajánlatot kérek" type="primary"></Button>
+            <Button 
+            text="Ajánlatot kérek" 
+            type="primary"
+            navigate
+            navigateTo="/contact"></Button>
           </div>
         </div>
         <div className="w-full md:w-1/2 h-[450px] flex p-2">

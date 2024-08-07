@@ -5,13 +5,14 @@ interface MailRequest {
   name: string;
   email: string;
   message: string;
-  telephone: string;
+  phone: string;
+  tier: string;
 }
 
 export async function POST(request: NextRequest) {
   console.log("csa");
   
-  const { name, email, message, telephone } = await request.json() as MailRequest;
+  const { name, email, message, phone, tier } = await request.json() as MailRequest;
 
   const transporter = nodemailer.createTransport({
     service: 'gmail', // vagy másik email szolgáltatás
@@ -25,10 +26,10 @@ export async function POST(request: NextRequest) {
     from: email,
     to: process.env.EMAIL_USER,
     subject: `Új megrendelés: ${name}`,
-    html: `<h1>Kapcsolat kérés</h1> <br> <p>Név:${name}</p><br> <p>Email: ${email}</p><br> <p>Telefonszám: ${telephone}</p><br> <p>Üzenet:${message}</p>`,
+    html: `<h1>Kapcsolat kérés</h1> <br> <p>Név:${name}</p><br> <p>Email: ${email}</p><br> <p>Telefonszám: ${phone}</p><br> <p>Üzenet:${message}</p> <br> <p>Package:${tier}</p>`,
     headers: {
-      'X-Priority': '1', // 1 - a legmagasabb prioritás
-      'Importance': 'high' // 'high' - magas fontosság
+      'X-Priority': '1',
+      'Importance': 'high'
     }
   };
 

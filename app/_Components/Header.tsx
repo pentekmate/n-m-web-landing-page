@@ -5,7 +5,8 @@ import downArrow from "../_Assets/down-arrow.png";
 import creator from "../_Assets/Website Creator-rafiki.png";
 import { lato, poppins } from "../_Utils/fonts";
 
-import { useEffect } from "react";
+
+
 
 export default function Header(){
   
@@ -34,7 +35,11 @@ export default function Header(){
                         height={15}
                         className="ml-2 md:ml-3"
                     />}></Button>
-                    <Button text="ajánlatot kérek" type="primary"></Button>
+                    <Button 
+                    text="ajánlatot kérek" 
+                    type="primary"
+                    navigate
+                    navigateTo="/contact"></Button>
                     </div>
 
                 </div>

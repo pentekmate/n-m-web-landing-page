@@ -58,7 +58,7 @@ export default function Reference() {
             className="w-full p-4 placeholder-gray-500 rounded-full"
           />
           <input
-            type="tel"
+            type="number"
             placeholder="Telefonszám"
             className="w-full p-4 placeholder-gray-500 rounded-full"
           />
