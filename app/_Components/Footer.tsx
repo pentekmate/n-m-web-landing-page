@@ -11,7 +11,7 @@ export default function Footer() {
 
   return (
     <>
-      <div data-aos="fade-up" className="w-full bg-fgrey flex flex-wrap p-8 text-white">
+      <div data-aos="fade-up" data-aos-once className="w-full bg-fgrey flex flex-wrap p-8 text-white">
         <div className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
           <div className="flex items-center">
             <Image

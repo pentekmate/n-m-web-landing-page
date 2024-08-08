@@ -14,6 +14,7 @@ import telo from "../_Assets/mobile.png";
 import facebook from "../_Assets/facebook.png";
 import Navigation from "../_Components/Navigation";
 import Button from "../_Components/Button";
+import Form from "../_Components/Form";
 
 interface FormData {
   name: string;
@@ -33,6 +34,11 @@ export default function Contact() {
     message: "",
     consent: false,
   });
+
+  const [responseMessage, setResponseMessage] = useState<string | null>(null);
+  const [responseMessageType, setResponseMessageType] = useState<
+    boolean | null
+  >(null);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -54,15 +60,26 @@ export default function Contact() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const response = await fetch("/api/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-    const data = await response.json();
-    console.log(data);
+    if (formData.consent) {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      setResponseMessage(data.message || "Sikeres küldés!");
+      setResponseMessageType(true);
+    } else {
+      setResponseMessage("Kérlek pipáld be a hozzájárulást.");
+      setResponseMessageType(false);
+    }
+
+    setTimeout(() => {
+      setResponseMessage(null);
+      setResponseMessageType(null);
+    }, 5000);
   };
 
   return (
@@ -80,69 +97,7 @@ export default function Contact() {
         >
           Csupán add meg adataidat, hogy felvehessük veled a kapcsolatot!
         </p>
-        <form
-          onSubmit={handleSubmit}
-          className="bg-cyellow bg-opacity-20 rounded-xl w-full sm:w-3/4 md:w-2/4 lg:w-1/3 flex flex-col items-center justify-center p-8 space-y-6"
-        >
-          <input
-            type="text"
-            name="name"
-            placeholder="Név"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full p-4 placeholder-gray-500 rounded-full"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="E-mail cím"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full p-4 placeholder-gray-500 rounded-full"
-          />
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Telefonszám"
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full p-4 placeholder-gray-500 rounded-full"
-          />
-          <div className="relative w-full">
-            <select
-              name="tier"
-              value={formData.tier}
-              onChange={handleChange}
-              className="w-full p-4 placeholder-gray-500 rounded-full bg-white border border-gray-300"
-            >
-              <option value="" disabled>
-                Melyik csomagunk érdekli?
-              </option>
-              <option value="statikus-weboldal">Statikus weboldal</option>
-              <option value="normal-weboldal">Normál weboldal</option>
-              <option value="egyedi-otlet">Egyedi ötlet</option>
-              <option value="meg-nem-dontottem">Még nem döntöttem</option>
-            </select>
-          </div>
-          <div className="w-full flex items-center space-x-2">
-            <input
-              type="checkbox"
-              name="consent"
-              checked={formData.consent}
-              onChange={handleChange}
-            />
-            <label className="italic">
-              Hozzájárulok a megadott adataim kapcsolatfelvétel céljából történő
-              kezeléséhez.
-            </label>
-          </div>
-          <button
-            type="submit"
-            className="bg-cyellow w-2/4 p-2 text-white rounded-full"
-          >
-            Küldés
-          </button>
-        </form>
+        <Form tier/>
       </div>
 
       <div className="w-full flex flex-col md:flex-row bg-cyellow bg-opacity-20">
@@ -200,39 +155,8 @@ export default function Contact() {
               Hagyj nekünk üzenetet!
             </h3>
             <div className="flex flex-col gap-4 w-full  md:w-3/4">
-              <input
-                type="text"
-                placeholder="Név"
-                className="w-full p-4 placeholder-gray-500 rounded-full "
-              />
-              <input
-                type="email"
-                placeholder="E-mail cím"
-                className="w-full p-4 placeholder-gray-500 rounded-full "
-              />
-              <input
-                type="tel"
-                placeholder="Telefonszám"
-                className="w-full p-4 placeholder-gray-500 rounded-full "
-              />
-
-              <input
-                type="text"
-                name="message"
-                placeholder="Üzenet"
-                value={formData.message}
-                onChange={handleChange}
-                className="w-full p-4 placeholder-gray-500 rounded-full"
-              />
-              <div className="w-full flex items-center space-x-2">
-                <input type="checkbox" />
-                <label className="italic">
-                  Hozzájárulok a megadott adataim kapcsolatfelvétel céljából
-                  történő kezeléséhez.
-                </label>
-              </div>
+              <Form message/>
             </div>
-            <Button text="küldés" type="primary"></Button>
           </div>
         </div>
       </div>
