@@ -1,16 +1,17 @@
+import Link from 'next/link';
 import Image from "next/image";
-import PropTypes from "prop-types";
 
 interface CardProps {
   title: string;
   imageSrc: string;
   hashtags: string[];
+  slug: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, imageSrc, hashtags }) => {
+const Card: React.FC<CardProps> = ({ title, imageSrc, hashtags, slug }) => {
   return (
-    <div className="md:w-1/4 lg:w-1/6 m-4 border rounded-lg shadow-lg">
-      <Image src={imageSrc} alt="logo" className="object-contain w-full rounded-lg" />
+    <Link href={`/blog/${slug}`} className="md:w-1/4 lg:w-1/6 m-4 border rounded-lg shadow-lg cursor-pointer">
+      <Image src={imageSrc} alt={title} className="object-contain w-full rounded-lg" />
       <div className="p-4">
         <h1 className="text-base font-bold mt-5">{title}</h1>
         {hashtags.map((hashtag, index) => (
@@ -19,7 +20,7 @@ const Card: React.FC<CardProps> = ({ title, imageSrc, hashtags }) => {
           </span>
         ))}
       </div>
-    </div>
+    </Link>
   );
 };
 

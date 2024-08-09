@@ -49,6 +49,7 @@ export default function Navigation() {
                 <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="/#tier" scroll={true}>Csomagok</Link>
                 <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="/contact">Kapcsolat</Link>
                 <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="/#reference"  scroll={true}>Referencia</Link>
+                <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="/blog">Blog</Link>
               </div>
               <Button text="ajánlatot kérek" 
               navigate
