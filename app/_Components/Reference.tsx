@@ -19,7 +19,7 @@ export default function Reference() {
     <>
       <div
        
-        className="w-full bg-cyellow py-10 flex md:justify-center xl:mt-24 md:items-center flex-col md:px-[90px] mt-12"
+        className="w-full bg-cyellow py-10 flex px-4 md:justify-center xl:mt-24 md:items-center flex-col md:px-[90px] mt-12"
       >
      <div  data-aos-once data-aos="fade-right" className="w-full flex flex-col items-center">
         <h3 className={`${poppins.className} h2`}> Referenciák </h3>

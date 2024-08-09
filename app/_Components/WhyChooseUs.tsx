@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function WhyChooseUs(){
     return(
-        <div  className="text-center w-full flex flex-col gap-1 items-center md:px-[90px] xl:my-24 my-12">
+        <div  className="text-center w-full flex flex-col gap-1 px-4 items-center md:px-[90px] xl:my-24 my-12">
           <h3  className={`${poppins.className} h2 `}>
             Miért válassz minket?
           </h3>

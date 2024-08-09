@@ -86,21 +86,23 @@ export default function Contact() {
     <>
       <Navigation />
 
-      <div className="flex flex-col items-center space-y-4 m-8 sm:m-4 md:m-6 lg:m-8 xl:m-10">
+      <div className="flex flex-col items-center my-12 xl:my-24 md:px-[90px] px-4  gap-4 ">
         <h3
-          className={`${poppins.className} text-2xl lg:leading-[72px]  text-[1.5rem] md:text-[32px] lg:text-h2 font-bold  `}
+          className={`${poppins.className} h2 `}
         >
           Tedd meg első lépésed a siker felé!
         </h3>
         <p
-          className={`${lato.className} text-base md:m-3  md:text-start text-center px-30 text-fgrey lg:text-[30px] font-light  lg:leading-[40px]   leading-6`}
+          className={`${lato.className} p1`}
         >
           Csupán add meg adataidat, hogy felvehessük veled a kapcsolatot!
         </p>
+        <div className="md:w-1/2 w-full">
         <Form tier/>
+        </div>
       </div>
 
-      <div className="w-full flex flex-col md:flex-row bg-cyellow bg-opacity-20">
+      <div className="w-full flex flex-col md:flex-row py-10 bg-cyellow bg-opacity-20">
         <div className="w-full md:w-1/2 flex">
           <Image
             src={creator}

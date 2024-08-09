@@ -5,9 +5,9 @@ import Button from "./Button";
 
 export default function SpecialOffer(){
     return(
-        <div  className="w-full flex flex-col md:flex-row py-16  bg-cyellow bg-opacity-10 md:px-[90px] xl:my-24 my-12">
+        <div  className="w-full flex flex-col px-4 md:flex-row py-16  bg-cyellow bg-opacity-10 md:px-[90px] xl:my-24 my-12">
         <div data-aos="fade-down-right" className="w-full md:w-1/2 flex px-4  flex-col gap-4 lg:gap-6 xl:gap-8 ">
-          <div>
+          <div className="flex flex-col gap-4">
             <h6 className={`${inter.className} text-cyellow uppercase `}>Egyedi ajánlat!</h6>
             <h3 className={`${poppins.className} h2`}>
               Webfejlesztés szinte ingyen!

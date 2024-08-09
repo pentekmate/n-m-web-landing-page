@@ -5,7 +5,7 @@ import Button from "./Button";
 
 export default function AboutUs(){
     return(
-      <div  className="w-full  flex flex-col md:flex-row h-fit md:px-[90px] my-12 xl:my-24">
+      <div  className="w-full  flex flex-col px-4 gap-4 md:flex-row h-fit md:px-[90px] my-12 xl:my-24">
       <div  data-aos="fade-up" className="w-full md:w-1/2 flex items-center justify-center">
         <div className="rounded-full bg-gradient-to-br from-customStart to-customEnd w-2/3">
           <Image

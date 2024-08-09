@@ -42,7 +42,7 @@ export default function Navigation() {
     <div className={`sticky z-[100] h-[60px] top-0 md:px-[90px] w-full flex  items-center ${scrolling? "navigatorBg" : "navigatorNoBg"}`}>
       <div className="flex justify-between w-full">
           <Link href="/">
-            <Image src={scrolling? whiteLogo:logo} alt="logo" width={scrolling?110:75} height={scrolling?100:75} className={`${scrolling?"-mt-3":"m-3"}`} />
+            <Image src={scrolling? whiteLogo:logo} alt="logo" width={scrolling?110:75} height={scrolling?100:75} className={`${scrolling?"":"m-3"}`} />
           </Link>
           <div className="flex  items-center">
               <div className="hidden  sm:flex space-x-3">
