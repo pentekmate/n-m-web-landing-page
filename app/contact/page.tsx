@@ -86,7 +86,7 @@ export default function Contact() {
     <>
       <Navigation />
 
-      <div className="flex flex-col items-center my-12 xl:my-24 md:px-[90px] px-4  gap-4 ">
+      <div  className="flex flex-col items-center my-12 xl:my-24 md:px-[90px] px-4  gap-4 ">
         <h3
           className={`${poppins.className} h2 `}
         >
@@ -110,7 +110,7 @@ export default function Contact() {
             className="w-full h-full object-contain"
           />
         </div>
-        <div className="w-full md:w-1/2 flex flex-col gap-4 border-l-2 border-l-cyellow px-4">
+        <div  id='message'  className="w-full md:w-1/2 flex flex-col gap-4 border-l-2 border-l-cyellow px-4">
           <div className="flex flex-col gap-4">
             <h3
               className={`${poppins.className} text-2xl lg:leading-[72px]  text-[1.5rem]  md:text-[32px] lg:text-h2 font-bold  `}

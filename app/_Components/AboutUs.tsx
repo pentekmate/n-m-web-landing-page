@@ -46,7 +46,7 @@ export default function AboutUs(){
            text="Kérdésem van"
            type="secondary"
            navigate
-           navigateTo="/contact"></Button>
+           navigateTo="/contact/#message"></Button>
           </div>
 
           
