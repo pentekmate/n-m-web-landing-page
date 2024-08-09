@@ -3,13 +3,13 @@ import PackageCard from "./PackageCard";
 
 export default function PackageOffers(){
     return(
-        <div data-aos="fade-right" className="text-center flex flex-col gap-6 items-center mt-[35px] p-4">
-        <h3 className={`${poppins.className} text-2xl  md:text-3xl font-bold m-3 uppercase`}>
+        <div id='tier' className="text-center flex px-4 flex-col gap-6 items-center my-12 xl:my-24">
+        <h3 className={`${poppins.className} h2`}>
           Lássuk milyen csomagok közül válogathatsz
         </h3>
         <p className={`${lato.className} font-light `}>Hogy megtaláld számodra a legjobbat.</p>
 
-        <div className="flex flex-wrap justify-center items-center">
+        <div data-aos="fade-right" className="flex flex-wrap justify-center items-center">
 
           <PackageCard
             title="Statikus Weboldal"

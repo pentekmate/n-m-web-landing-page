@@ -35,8 +35,20 @@ const config: Config = {
         },
       },
       fontSize:{
-        "h2":"48px",
-        "p2":"30px"
+        "h1-xl":"61px",
+        "h1-lg":"32px",
+
+
+        "h2-xl":"32px",
+        "h2-lg":"28px",
+        
+
+
+        "p2":"20px",
+        "p2-xl":"30px",
+        "p2-lg":"20px",
+
+        
       }
     },
   },

@@ -7,38 +7,44 @@ import Image from "next/image";
 
 export default function WhyChooseUs(){
     return(
-        <div data-aos="fade-left" className="text-center flex flex-col gap-[47px] items-center  mt-24 mb-24">
-        <h3  className={`${poppins.className} text-2xl lg:leading-[72px]  text-[2rem] md:text-[32px] lg:text-h2 font-bold  `}>
-          Miért válassz minket?
-        </h3>
-        <div className="flex flex-wrap justify-center">
-          <div className="items-center justify-center flex flex-col mx-7 md:mx-12">
-            <Image src={pontossag} alt="pontossag" width={65} className="m-3" />
-            <span className={`${lato.className} lg:text-[37px] font-bold`}>Pontosság</span>
+        <div  className="text-center w-full flex flex-col gap-1 px-4 items-center md:px-[90px] xl:my-24 my-12">
+          <h3  className={`${poppins.className} h2 `}>
+            Miért válassz minket?
+          </h3>
+
+          <div data-aos="fade-up" className="flex flex-wrap  w-full md:justify-evenly gap-y-6">
+
+            <div   className="items-center w-1/2 gap-4   justify-center flex flex-col  ">
+              <Image src={pontossag} alt="pontossag" width={65} className="" />
+              <span className={`${lato.className} WhyChooseUsSpan`}>Pontosság</span>
+            </div>
+
+            <div  className="items-center gap-4  w-1/2  justify-center flex flex-col  ">
+              <Image src={gyorsasag} alt="gyorsasag" width={65} className="" />
+              <span className={`${lato.className} WhyChooseUsSpan`}>Gyorsaság</span>
+            </div>
+
+            <div  className="items-center gap-4  w-1/2  justify-center flex flex-col ">
+              <Image
+                src={alacsony_ar}
+                alt="alacsony_ar"
+                width={65}
+                className=""
+              />
+              <span className={`${lato.className} WhyChooseUsSpan`}>Alacsony ár</span>
+            </div>
+
+            <div  className="items-center gap-4  w-1/2  justify-center flex flex-col ">
+              <Image
+                src={megbizhatosag}
+                alt="megbizhatosag"
+                width={65}
+                className=""
+              />
+              <span className={`${lato.className} WhyChooseUsSpan`}>Megbízhatóság</span>
+            </div>
+
           </div>
-          <div className="items-center justify-center flex flex-col mx-7 md:mx-12">
-            <Image src={gyorsasag} alt="gyorsasag" width={65} className="m-3" />
-            <span className={`${lato.className} lg:text-[37px] font-bold`}>Gyorsaság</span>
-          </div>
-          <div className="items-center justify-center flex flex-col mx-7 md:mx-12">
-            <Image
-              src={alacsony_ar}
-              alt="alacsony_ar"
-              width={65}
-              className="m-3"
-            />
-            <span className={`${lato.className} lg:text-[37px] font-bold`}>Alacsony ár</span>
-          </div>
-          <div className="items-center justify-center flex flex-col mx-7 md:mx-12">
-            <Image
-              src={megbizhatosag}
-              alt="megbizhatosag"
-              width={65}
-              className="m-3"
-            />
-            <span className={`${lato.className} font-bold lg:text-[37px]`}>Megbízhatóság</span>
-          </div>
-        </div>
       </div>
     )
 }

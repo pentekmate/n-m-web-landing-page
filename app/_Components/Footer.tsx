@@ -11,8 +11,8 @@ export default function Footer() {
 
   return (
     <>
-      <div data-aos="fade-up" data-aos-once className="w-full bg-fgrey flex flex-wrap p-8 text-white">
-        <div className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
+      <div  data-aos-once data-aos="fade-up" className="w-full md:px-[90px] bg-fgrey flex flex-wrap p-8 text-white">
+        <div  className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
           <div className="flex items-center">
             <Image
               src={logo}
@@ -38,7 +38,7 @@ export default function Footer() {
             <li className="hover:text-gray-400 cursor-pointer">Csomagok</li>
           </ul>
         </div>
-        <div className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
+        <div  className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
           <h3 className={`${poppins.className} text-white font-bold text-xl`}>Kapcsolat</h3>
           <div className={`${lato.className} flex items-center space-x-2`}>
             <Image src={email} alt="email logo" className="w-6 h-6" />
@@ -53,7 +53,7 @@ export default function Footer() {
             <p>facebook</p>
           </div>
         </div>
-        <div className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
+        <div  className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
           <h3 className={`${poppins.className} text-white font-bold text-xl`}>Egyéb linkek</h3>
           <p className={`${lato.className} hover:text-gray-400 cursor-pointer`}>FAQ</p>
         </div>

@@ -42,13 +42,13 @@ export default function Navigation() {
     <div className={`sticky z-[100] h-[60px] top-0 md:px-[90px] w-full flex  items-center ${scrolling? "navigatorBg" : "navigatorNoBg"}`}>
       <div className="flex justify-between w-full">
           <Link href="/">
-            <Image src={scrolling? whiteLogo:logo} alt="logo" width={scrolling?110:75} height={scrolling?100:75} className={`${scrolling?"-mt-3":"m-3"}`} />
+            <Image src={scrolling? whiteLogo:logo} alt="logo" width={scrolling?110:75} height={scrolling?100:75} className={`${scrolling?"":"m-3"}`} />
           </Link>
           <div className="flex  items-center">
               <div className="hidden  sm:flex space-x-3">
-                <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="/">Csomagok</Link>
+                <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="#tier" scroll={true}>Csomagok</Link>
                 <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="/contact">Kapcsolat</Link>
-                <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="/">Referencia</Link>
+                <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="#reference"  scroll={true}>Referencia</Link>
               </div>
               <Button text="ajánlatot kérek" 
               navigate
@@ -87,7 +87,7 @@ export default function Navigation() {
                 <Link href="/">Főoldal</Link>
               </li>
               <li className="text-xl font-bold mb-2">
-                <Link href="/">Csomagok</Link>
+                <Link  href="/">Csomagok</Link>
               </li>
               <li className="text-xl font-bold mb-2">
                 <Link href="/contact">Kapcsolat</Link>

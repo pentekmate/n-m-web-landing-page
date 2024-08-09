@@ -90,7 +90,7 @@ export default function Form({ tier, message }: FromProps) {
     <>
       <form
         onSubmit={handleSubmit}
-        className="bg-cyellow bg-opacity-20 rounded-xl w-full sm:w-3/4 md:w-2/4 lg:w-1/3 flex flex-col items-center justify-center p-8 space-y-6"
+        className="bg-cyellow bg-opacity-20 rounded-xl w-full  flex flex-col h-fit px-4 gap-4 py-4 items-center justify-center"
       >
         <input
           type="text"

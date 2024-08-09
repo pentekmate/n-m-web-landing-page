@@ -1,0 +1,15 @@
+
+.h1 {
+    @apply text-[1.5rem] md:text-[30px] lg:text-h1-lg xl:text-h1-xl font-bold;
+}
+.p1{
+   @apply text-base text-start  text-fgrey lg:text-p2-lg xl:text-p2-xl lg:leading-[40px] font-light ;
+}
+
+.h2{
+    @apply text-2xl lg:leading-[45px] xl:leading-[72px]  text-[1.5rem] lg:text-h2-lg xl:text-h2-xl font-bold ;
+}
+
+.WhyChooseUsSpan{
+    @apply lg:text-[22px] xl:text-[35px] font-bold;
+}
