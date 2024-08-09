@@ -25,20 +25,17 @@ export default function Home() {
 })
 
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <Navigation/>
-      <Header></Header>
+      <Header></Header> 
       <ImporantWebsite></ImporantWebsite>
       <WhyChooseUs></WhyChooseUs>
       <SpecialOffer></SpecialOffer>
       <PackageOffers></PackageOffers>
       <AboutUs></AboutUs>
-
-    
-
+ 
       <Reference />
-
-      <Footer />
+      <Footer  />    
     </div>
   );
 }

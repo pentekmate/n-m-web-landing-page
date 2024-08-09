@@ -10,7 +10,6 @@ interface MailRequest {
 }
 
 export async function POST(request: NextRequest) {
-  console.log("csa");
   
   const { name, email, message, phone, tier } = await request.json() as MailRequest;
 
