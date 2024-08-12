@@ -4,15 +4,20 @@ import User from "../_Assets/User research-bro.png";
 import Button from "./Button";
 
 export default function AboutUs(){
+    const doNothing = (event) => {
+      event.preventDefault(); // Megakadályozza az alapértelmezett link működést
+    };
     return(
       <div  className="w-full  flex flex-col px-4 gap-4 md:flex-row h-fit md:px-[90px] my-12 xl:my-24">
       <div  data-aos="fade-up" className="w-full md:w-1/2 flex items-center justify-center">
         <div className="rounded-full bg-gradient-to-br from-customStart to-customEnd w-2/3">
+        <a href="https://storyset.com/business" onClick={doNothing}>
           <Image
             src={User}
             alt="logo"
             className="object-cover w-full h-full"
           />
+          </a>
         </div>
       </div>
 

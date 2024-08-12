@@ -177,6 +177,10 @@ export default function Blogs() {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  const doNothing = (event) => {
+    event.preventDefault(); // Megakadályozza az alapértelmezett link működést
+  };
+
   return (
     <>
       <Header />
@@ -185,7 +189,9 @@ export default function Blogs() {
         <h1 className="text-cyellow font-bold uppercase text-4xl">n&m web</h1>
         <h1 className="text-cyellow uppercase text-xl">blog</h1>
         <div className="rounded-full border w-1/4 bg-cyellow">
-          <Image src={creator} alt="logo" className="object-contain" />
+          <a href="https://storyset.com/online" onClick={doNothing}>
+            <Image src={creator} alt="logo" className="object-contain" />
+          </a>
         </div>
       </div>
 
