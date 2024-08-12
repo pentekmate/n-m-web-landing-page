@@ -12,7 +12,7 @@ interface MailRequest {
 export async function POST(request: NextRequest) {
   
   const { name, email, message, phone, tier } = await request.json() as MailRequest;
-
+  console.log(process.env.EMAIL_PASS)
   const transporter = nodemailer.createTransport({
     service: 'gmail', // vagy másik email szolgáltatás
     auth: {
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
   });
 
   const mailOptions = {
-    from: email,
+    from: process.env.EMAIL_USER,
     to: process.env.EMAIL_USER,
     subject: `Új megrendelés: ${name}`,
     html: `<h1>Kapcsolat kérés</h1> <br> <p>Név:${name}</p><br> <p>Email: ${email}</p><br> <p>Telefonszám: ${phone}</p><br> <p>Üzenet:${message}</p> <br> <p>Package:${tier}</p>`,
@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
 
   try {
     await transporter.sendMail(mailOptions);
-    return NextResponse.json({ message: 'Email sikeresen elküldve' }, { status: 200 });
+    return NextResponse.json({ message: "Köszönjük bizalmadat!\n Munkatársunk hamarosan felveszi veled a kapcsolatot!" }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ error: 'Hiba történt az email küldése során' }, { status: 500 });
   }

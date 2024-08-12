@@ -5,10 +5,11 @@ import { lato, poppins } from "../_Utils/fonts";
 import Button from "./Button";
 export default function ImporantWebsite(){
     return(
-        <div  className="w-full  flex flex-col md:flex-row gap-4 h-fit my-12 px-4 xl:my-24 md:px-[90px]">
+        <div id="importantWebsite" className="w-full  flex flex-col md:flex-row gap-4 h-fit my-12 px-4 xl:my-24 md:px-[90px]">
           <div data-aos="fade-down-right" className="w-full md:w-1/2 flex items-center justify-center">
             <div className="rounded-full bg-gradient-to-br from-customStart to-customEnd w-2/3">
               <Image
+                
                 src={charts}
                 alt="logo"
                 className="object-cover w-full h-full"

@@ -15,6 +15,7 @@ export default function Footer() {
         <div  className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
           <div className="flex items-center">
             <Image
+             
               src={logo}
               alt="logo"
               width={75}
