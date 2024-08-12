@@ -96,6 +96,9 @@ export default function Navigation() {
               <li className="text-xl font-bold mb-2">
                 <Link href="/">Referencia</Link>
               </li>
+              <li className="text-xl font-bold mb-2">
+                <Link href="/blog">Blog</Link>
+              </li>
             </ul>
             <div className="text-white text-center items-center border-white inline-flex border rounded-full px-4 py-2 w-3/4 uppercase text-sm font-bold flex  justify-center w-full border cursor-pointer">
               <Link href="/contact">Ajánlatot kérek</Link>
