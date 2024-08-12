@@ -5,9 +5,6 @@ import downArrow from "../_Assets/down-arrow.png";
 import creator from "../_Assets/Website Creator-rafiki.png";
 import { lato, poppins } from "../_Utils/fonts";
 
-
-
-
 export default function Header(){
   
     return(
@@ -31,14 +28,19 @@ export default function Header(){
                         </div>
 
                         <div className="flex flex-col p-4  md:px-0 w-full md:flex-row md:justify-start justify-center gap-4">
-                        <Button text="tudj meg többet" type="secondary" icon={
+                        <Button 
+                        text="tudj meg többet" 
+                        type="secondary" icon={
                             <Image
                             src={downArrow}
                             alt="logo"
                             width={15}
                             height={15}
                             className="ml-2 md:ml-3"
-                        />}/>
+                        />}
+                        navigate
+                        navigateTo="/#importantWebsite"
+                        />
                         <Button 
                         text="ajánlatot kérek" 
                         type="primary"

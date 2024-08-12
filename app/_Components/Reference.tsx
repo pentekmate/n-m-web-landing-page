@@ -8,6 +8,7 @@ import { inter, lato, poppins } from "../_Utils/fonts";
 import plus from "../_Assets/plus.png";
 import Form from "./Form";
 import Link from "next/link";
+import ToggleDiv from "./ToggleDiv";
 
 export default function Reference() {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,7 +23,7 @@ export default function Reference() {
   };
 
   function ScrollToElement(){
-    const scrolltoElement = document.getElementById('form')
+    const scrolltoElement = document.getElementById('referenceForm')
     if(scrolltoElement)
       window.scrollTo({
         top:scrolltoElement.offsetTop-250,
@@ -69,29 +70,7 @@ export default function Reference() {
         </div>
      </div>
       </div>
-      <div
-        className={` ${
-          isVisible ? "  lg:h-[600px] xl:h-[750px]  m-8 sm:m-4 md:m-6 lg:m-8 xl:m-10" : "h-[0px]"
-        } transition-all duration-500 flex flex-col  items-center space-y-4 `}
-      >
-        {isVisible && (
-          <>
-            <h3
-              className={`${poppins.className} h2`}
-            >
-              Megtetted első lépésed,
-            </h3>
-            <p
-              className={`${lato.className} p1`}
-            >
-              A Siker felé, vedd fel velünk a kapcsolatot!
-            </p>
-            <div id="form" className="md:w-1/2 w-full">
-              <Form tier />
-            </div>
-          </>
-        )}
-      </div>
+      <ToggleDiv formId="referenceForm" isVisible={isVisible}></ToggleDiv>
     </>
   );
 }

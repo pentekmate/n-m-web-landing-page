@@ -1,19 +1,8 @@
 "use client";
 
-import { useState, ChangeEvent, FormEvent } from "react";
-import Footer from "../_Components/Footer";
-import Header from "../_Components/Navigation";
-import { inter, lato, poppins } from "../_Utils/fonts";
-
-import Image from "next/image";
-import Link from "next/link";
-
-import creator from "../_Assets/contact us-bro.png";
-import emailIcon from "../_Assets/email.png";
-import telo from "../_Assets/mobile.png";
-import facebook from "../_Assets/facebook.png";
-import Navigation from "../_Components/Navigation";
-import Button from "../_Components/Button";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
+import { lato } from "../_Utils/fonts";
+import SubmitModal from "./SubmitModal";
 
 export interface FormData {
   name: string;
@@ -27,9 +16,10 @@ export interface FormData {
 type FromProps = {
   tier?: boolean;
   message?: boolean;
+  selectedPackage?: string | null;
 };
 
-export default function Form({ tier, message }: FromProps) {
+export default function Form({ tier, message, selectedPackage }: FromProps) {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -40,9 +30,7 @@ export default function Form({ tier, message }: FromProps) {
   });
 
   const [responseMessage, setResponseMessage] = useState<string | null>(null);
-  const [responseMessageType, setResponseMessageType] = useState<
-    boolean | null
-  >(null);
+  const [responseMessageType, setResponseMessageType] = useState<boolean | null>(null);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -62,9 +50,20 @@ export default function Form({ tier, message }: FromProps) {
     }
   };
 
+  useEffect(() => {
+    if (selectedPackage) {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        tier: selectedPackage,
+      }));
+    }
+  }, [selectedPackage]);
+
+
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (formData.consent) {
+    if (formData.consent && formData.email && formData.phone) {
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
@@ -73,108 +72,108 @@ export default function Form({ tier, message }: FromProps) {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
-      setResponseMessage(data.message || "Sikeres küldés!");
-      setResponseMessageType(true);
+    
+      if(response.status===500){
+        setResponseMessage("Hiba lépett fel az email küldése közben");
+        setResponseMessageType(false);
+      }
+      else{
+        setResponseMessage(data.message || "Köszönjük bizalmadat!\n Munkatársunk hamarosan felveszi veled a kapcsolatot!");
+        setResponseMessageType(true);
+      }
     } else {
-      setResponseMessage("Kérlek pipáld be a hozzájárulást.");
+      setResponseMessage("Kérlek töltsd ki a hiányzó mezőket.");
       setResponseMessageType(false);
     }
 
-    setTimeout(() => {
-      setResponseMessage(null);
-      setResponseMessageType(null);
-    }, 5000);
+    // setTimeout(() => {
+    //   setResponseMessage(null);
+    //   setResponseMessageType(null);
+    // }, 5000);
   };
+  const resetMesseage=()=>{
+    setResponseMessage(null);
+  }
 
   return (
-    <>
-      <form
-        onSubmit={handleSubmit}
-        className="bg-cyellow bg-opacity-20 rounded-xl w-full  flex flex-col h-fit px-4 gap-4 py-4 items-center justify-center"
-      >
-        <input
-          type="text"
-          name="name"
-          placeholder="Név"
-          value={formData.name}
-          onChange={handleChange}
-          className="w-full p-4 placeholder-gray-500 rounded-full"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="E-mail cím"
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full p-4 placeholder-gray-500 rounded-full"
-        />
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Telefonszám"
-          value={formData.phone}
-          onChange={handleChange}
-          className="w-full p-4 placeholder-gray-500 rounded-full"
-        />
-        {tier && (
-          <div className="relative w-full">
-            <select
-              name="tier"
-              value={formData.tier}
-              onChange={handleChange}
-              className="w-full p-4 placeholder-gray-500 rounded-full bg-white border border-gray-300"
-            >
-              <option value="" disabled>
-                Melyik csomagunk érdekli?
-              </option>
-              <option value="statikus-weboldal">Statikus weboldal</option>
-              <option value="normal-weboldal">Normál weboldal</option>
-              <option value="egyedi-otlet">Egyedi ötlet</option>
-              <option value="meg-nem-dontottem">Még nem döntöttem</option>
-            </select>
-          </div>
-        )}
-
-        {message && (
-          <textarea
-            name="message"
-            placeholder="Üzenet"
-            value={formData.message}
+    <form
+      onSubmit={handleSubmit}
+      className="bg-cyellow bg-opacity-20 rounded-xl w-full flex flex-col h-fit px-4 gap-4 py-4 items-center justify-center"
+    >
+      <input
+        type="text"
+        name="name"
+        placeholder="Név"
+        value={formData.name}
+        onChange={handleChange}
+        className="w-full p-4 placeholder-gray-500 rounded-full"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="E-mail cím"
+        value={formData.email}
+        onChange={handleChange}
+        className="w-full p-4 placeholder-gray-500 rounded-full"
+      />
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Telefonszám"
+        value={formData.phone}
+        onChange={handleChange}
+        className="w-full p-4 placeholder-gray-500 rounded-full"
+      />
+      {tier && (
+        <div className="relative w-full">
+          <select
+            name="tier"
+            value={formData.tier}
             onChange={handleChange}
-            className="w-full p-4 placeholder-gray-500 rounded-lg"
-          ></textarea>
-        )}
-
-        <div className="w-full flex items-center space-x-2">
-          <input
-            type="checkbox"
-            name="consent"
-            checked={formData.consent}
-            onChange={handleChange}
-          />
-          <label className="italic">
-            Hozzájárulok a megadott adataim kapcsolatfelvétel céljából történő
-            kezeléséhez.
-          </label>
-        </div>
-        <button
-          type="submit"
-          className="bg-cyellow w-2/4 p-2 text-white rounded-full"
-        >
-          Küldés
-        </button>
-        {responseMessage && (
-          <div
-            className={`text-white ${
-              responseMessageType
-                ? "bg-green-700 bg-opacity-50"
-                : "bg-red-700 bg-opacity-50"
-            } p-4 rounded-lg w-full text-center`}
+            className="w-full p-4 placeholder-gray-500 rounded-full bg-white border border-gray-300"
           >
-            {responseMessage}
-          </div>
-        )}
-      </form>
-    </>
+            <option value="" disabled>
+              Melyik csomagunk érdekli?
+            </option>
+            <option value="statikus-weboldal">Statikus weboldal</option>
+            <option value="normal-weboldal">Normál weboldal</option>
+            <option value="egyedi-otlet">Egyedi ötlet</option>
+            <option value="meg-nem-dontottem">Még nem döntöttem</option>
+          </select>
+        </div>
+      )}
+
+      {message && (
+        <textarea
+          name="message"
+          placeholder="Üzenet"
+          value={formData.message}
+          onChange={handleChange}
+          className="w-full p-4 placeholder-gray-500 rounded-lg"
+        ></textarea>
+      )}
+
+      <div className="w-full flex items-center space-x-2">
+        <input
+          type="checkbox"
+          name="consent"
+          checked={formData.consent}
+          onChange={handleChange}
+        />
+        <label className="italic">
+          Hozzájárulok a megadott adataim kapcsolatfelvétel céljából történő
+          kezeléséhez.
+        </label>
+      </div>
+      <button
+        type="submit"
+        className="bg-cyellow w-2/4 p-2 text-white rounded-full"
+      >
+        Küldés
+      </button>
+      {responseMessage && (
+        <SubmitModal onClick={resetMesseage} responseMessage={responseMessage} responseMessageType={responseMessageType} ></SubmitModal>
+      )}
+    </form>
   );
 }

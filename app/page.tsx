@@ -23,9 +23,8 @@ export default function Home() {
   useEffect(()=>{
     AOS.init({})
 })
-
   return (
-    <div className="relative w-full">
+    <div className="w-full">
       <Navigation/>
       <Header></Header> 
       <ImporantWebsite></ImporantWebsite>
@@ -35,7 +34,7 @@ export default function Home() {
       <AboutUs></AboutUs>
  
       <Reference />
-      <Footer  />    
+      <Footer  />     
     </div>
   );
 }

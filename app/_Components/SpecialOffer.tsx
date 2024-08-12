@@ -36,6 +36,7 @@ export default function SpecialOffer(){
         </div>
         <div data-aos="fade-down-right" className="w-full md:w-1/2 h-[450px] flex ">
           <Image
+            quality={80}
             src={team}
             alt="logo"
             className="w-full h-full object-contain"
