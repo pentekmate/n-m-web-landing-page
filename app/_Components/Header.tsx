@@ -6,6 +6,9 @@ import creator from "../_Assets/Website Creator-rafiki.png";
 import { lato, poppins } from "../_Utils/fonts";
 
 export default function Header(){
+    const doNothing = (event) => {
+        event.preventDefault(); // Megakadályozza az alapértelmezett link működést
+    };  
   
     return(
         <div   className="w-full flex flex-col  md:flex-row h-fit mt-4 md:px-[90px]">
@@ -52,11 +55,13 @@ export default function Header(){
                 </div>
             <div data-aos="fade-down-right" className="w-full md:w-1/2 flex items-center justify-center">
                 <div className="w-2/3">
-                    <Image
-                        src={creator}
-                        alt="logo"
-                        className="object-cover w-full h-full"
-                    />
+                    <a href="https://storyset.com/people" onClick={doNothing}>
+                        <Image
+                            src={creator}
+                            alt="logo"
+                            className="object-cover w-full h-full"
+                        />
+                    </a>
                 </div>
           </div>
       </div>

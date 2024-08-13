@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import creator from "../_Assets/Wall post-rafiki.png";
 
@@ -162,6 +165,22 @@ export const cardsData = [
 ];
 
 export default function Blogs() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 5; // Minden oldalon megjelenő posztok száma
+
+  // Lapozás
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = cardsData.slice(indexOfFirstPost, indexOfLastPost);
+
+  const totalPages = Math.ceil(cardsData.length / postsPerPage);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const doNothing = (event) => {
+    event.preventDefault(); // Megakadályozza az alapértelmezett link működést
+  };
+
   return (
     <>
       <Header />
@@ -170,7 +189,9 @@ export default function Blogs() {
         <h1 className="text-cyellow font-bold uppercase text-4xl">n&m web</h1>
         <h1 className="text-cyellow uppercase text-xl">blog</h1>
         <div className="rounded-full border w-1/4 bg-cyellow">
-          <Image src={creator} alt="logo" className="object-contain" />
+          <a href="https://storyset.com/online" onClick={doNothing}>
+            <Image src={creator} alt="logo" className="object-contain" />
+          </a>
         </div>
       </div>
 
@@ -179,7 +200,7 @@ export default function Blogs() {
       </div>
 
       <div className="w-full flex justify-center items-center gap-24 flex-col px-4 py-8">
-        {cardsData.map((card, index) => (
+        {currentPosts.map((card, index) => (
           <Card
             key={index}
             title={card.title}
@@ -189,6 +210,56 @@ export default function Blogs() {
             text={card.text}
           />
         ))}
+
+        <div className="flex justify-center md:w-2/4 lg:w-2/4 m-4 px-4">
+          <nav>
+            <ul className="flex space-x-2">
+              <li>
+                <button
+                  onClick={() => paginate(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className={`px-3 py-1 rounded ${
+                    currentPage === 1
+                      ? "bg-gray-200 text-gray-500"
+                      : "bg-cyellow text-white"
+                  }`}
+                >
+                  Előző
+                </button>
+              </li>
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (number) => (
+                  <li key={number}>
+                    <button
+                      onClick={() => paginate(number)}
+                      className={`px-3 py-1 rounded ${
+                        number === currentPage
+                          ? "bg-cyellow text-white"
+                          : "bg-gray-200 text-gray-700"
+                      }`}
+                    >
+                      {number}
+                    </button>
+                  </li>
+                )
+              )}
+
+              <li>
+                <button
+                  onClick={() => paginate(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className={`px-3 py-1 rounded ${
+                    currentPage === totalPages
+                      ? "bg-gray-200 text-gray-500"
+                      : "bg-cyellow text-white"
+                  }`}
+                >
+                  Következő
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
 
       <Footer />

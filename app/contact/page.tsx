@@ -82,6 +82,10 @@ export default function Contact() {
     }, 5000);
   };
 
+  const doNothing = (event) => {
+    event.preventDefault(); // Megakadályozza az alapértelmezett link működést
+  };
+
   return (
     <>
       <Navigation />
@@ -104,11 +108,13 @@ export default function Contact() {
 
       <div className="w-full flex flex-col md:flex-row py-10 bg-cyellow bg-opacity-20">
         <div className="w-full md:w-1/2 flex">
+        <a href="https://storyset.com/business" onClick={doNothing}>
           <Image
             src={creator}
             alt="logo"
             className="w-full h-full object-contain"
           />
+          </a>
         </div>
         <div  id='message'  className="w-full md:w-1/2 flex flex-col gap-4 border-l-2 border-l-cyellow px-4">
           <div className="flex flex-col gap-4">

@@ -4,6 +4,9 @@ import team from "../_Assets/Team goals-rafiki.png";
 import Button from "./Button";
 
 export default function SpecialOffer(){
+    const doNothing = (event) => {
+      event.preventDefault(); // Megakadályozza az alapértelmezett link működést
+    };
     return(
         <div  className="w-full flex flex-col px-4 md:flex-row py-16  bg-cyellow bg-opacity-10 md:px-[90px] xl:my-24 my-12">
         <div data-aos="fade-down-right" className="w-full md:w-1/2 flex px-4  flex-col gap-4 lg:gap-6 xl:gap-8 ">
@@ -35,12 +38,14 @@ export default function SpecialOffer(){
        
         </div>
         <div data-aos="fade-down-right" className="w-full md:w-1/2 h-[450px] flex ">
+        <a href="https://storyset.com/people" onClick={doNothing}>
           <Image
             quality={80}
             src={team}
             alt="logo"
             className="w-full h-full object-contain"
           />
+          </a>
         </div>
       </div>
     )
