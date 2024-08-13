@@ -16,10 +16,12 @@ import Image from "next/image";
 import Link from "next/link";
 import whiteLogo from "../_Assets/logo-white-no-bg.png"
 import Button from "./Button";
+import { usePathname } from "next/navigation";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolling,setScrolling]=useState<boolean>(false)
+  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -45,6 +47,10 @@ export default function Navigation() {
     };
   }, []);
 
+ 
+  const path = usePathname()
+  
+
   return (
     <div className={`sticky z-[100] h-[60px] top-0 md:px-[90px] w-full flex  ${scrolling? "navigatorBg" : "navigatorNoBg"}`}>
       <div className="flex items-center justify-between w-full">
@@ -58,13 +64,21 @@ export default function Navigation() {
                         Csomagok
                     </div>
                 </Link>
-                <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="/contact">Kapcsolat</Link>
+                <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="/contact">
+                    <div className={`${path==='/contact'? "active":""} box`}>
+                      Kapcsolat
+                    </div>
+                </Link>
                 <Link  className="hover:font-bold transition-all min-w-[100px] nav-item " href="/#reference"  scroll={true}>
                     <div  data-to-scrollspy-id="reference"  className="box" >
                       Referencia
                     </div>
                 </Link>
-                <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="/blog">Blog</Link>
+                <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="/blog">
+                      <div className={`${path==="/blog"?"active":""} box`}>
+                        Blog
+                      </div>
+                </Link>
               </div>
               <Button text="ajánlatot kérek" 
               navigate
