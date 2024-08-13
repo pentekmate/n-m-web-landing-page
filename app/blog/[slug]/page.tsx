@@ -3,6 +3,11 @@ import Header from "../../_Components/Navigation";
 import Footer from "../../_Components/Footer";
 import { cardsData } from "../page";
 
+
+export const metadata={
+  title:'Blog'
+}
+
 const BlogPost = ({ params }: { params: { slug: string } }) => {
   // Find the post that matches the slug
   const postData = cardsData.find((post) => post.slug === params.slug);

@@ -3,7 +3,11 @@ import { lato, poppins } from "../_Utils/fonts";
 import PackageCard from "./PackageCard";
 import ToggleDiv from "./ToggleDiv";
 
-export default function PackageOffers(){
+type PackageOffersProps={
+  id:string
+}
+
+export default function PackageOffers({id}:PackageOffersProps){
   const [isVisible, setIsVisible] = useState(false);
   const [selectedTier,setSelectedTier]=useState<null | string>(null)
 
@@ -35,7 +39,8 @@ export default function PackageOffers(){
   }
     return(
       <>
-      <div id='tier' className="text-center flex px-4 flex-col gap-6 items-center my-12 xl:my-24">
+   
+      <div id={id} className="text-center flex px-4 flex-col gap-6 items-center my-12 xl:my-24">
         <h3 className={`${poppins.className} h2`}>
           Lássuk milyen csomagok közül válogathatsz
         </h3>
@@ -73,6 +78,7 @@ export default function PackageOffers(){
         </div>
       </div>
       <ToggleDiv selectedPackage={selectedTier} formId="packageForm" isVisible={isVisible}></ToggleDiv>
+    
       </>
     )
 }
