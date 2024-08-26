@@ -175,7 +175,7 @@ export default function Blogs() {
 
   const totalPages = Math.ceil(cardsData.length / postsPerPage);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber:number) => setCurrentPage(pageNumber);
 
   const doNothing = (event) => {
     event.preventDefault(); // Megakadályozza az alapértelmezett link működést
@@ -184,7 +184,7 @@ export default function Blogs() {
   return (
     <>
       <Header />
-
+    
       <div className="bg-cyellow bg-opacity-20 w-full flex flex-col items-center justify-center p-4">
         <h1 className="text-cyellow font-bold uppercase text-4xl">n&m web</h1>
         <h1 className="text-cyellow uppercase text-xl">blog</h1>

@@ -27,7 +27,7 @@ export default function Home() {
     <div className="w-full">
       
         <Navigation/>
-        <ScrollSpy activeClass="active"    >
+        <ScrollSpy activeClass="active" >
             <Header></Header> 
             <ImporantWebsite></ImporantWebsite>
             <WhyChooseUs></WhyChooseUs>

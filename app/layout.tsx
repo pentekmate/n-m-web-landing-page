@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import "./fonts.css"
+import { Suspense } from "react";
+import Loading from "./_Components/Loading";
 
 
 export const metadata = {
@@ -22,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <Suspense fallback={<Loading></Loading>}>
+          <body>{children}</body>
+      </Suspense>
     </html>
   );
 }
