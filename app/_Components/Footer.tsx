@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { inter, lato, poppins } from "../_Utils/fonts";
 
@@ -33,25 +34,25 @@ export default function Footer() {
         <div className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
           <h3 className={`${poppins.className} text-white font-bold text-xl`}>Navigáció</h3>
           <ul className={`${lato.className} space-y-2`}>
-            <li className="hover:text-gray-400 cursor-pointer">Blog</li>
-            <li className="hover:text-gray-400 cursor-pointer">Kapcsolat</li>
-            <li className="hover:text-gray-400 cursor-pointer">Rólunk</li>
-            <li className="hover:text-gray-400 cursor-pointer">Csomagok</li>
+            <Link href="/blog" className="hover:text-gray-400 cursor-pointer">Blog</Link>
+            <Link href="/contact" className="hover:text-gray-400 cursor-pointer">Kapcsolat</Link>
+            <Link href="=#reference" className="hover:text-gray-400 cursor-pointer" scroll={true}>Referencia</Link>
+            <Link  href="/#tier" scroll={true} className="hover:text-gray-400 cursor-pointer">Csomagok</Link>
           </ul>
         </div>
         <div  className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
           <h3 className={`${poppins.className} text-white font-bold text-xl`}>Kapcsolat</h3>
           <div className={`${lato.className} flex items-center space-x-2`}>
             <Image src={email} alt="email logo" className="w-6 h-6" />
-            <p>email@email.com</p>
+            <a href="mailto:nmwebprogrammer@gmail.com">nmwebprogrammer@gmail.com</a>
           </div>
           <div className={`${lato.className} flex items-center space-x-2`}>
             <Image src={telo} alt="phone logo" className="w-6 h-6" />
-            <p>+36704228587</p>
+            <a href="tel:+36704228587">+36704228587</a>
           </div>
           <div className={`${lato.className} flex items-center space-x-2`}>
             <Image src={facebook} alt="facebook logo" className="w-6 h-6" />
-            <p>facebook</p>
+            <a href="https://www.facebook.com/profile.php?id=61563104472891">N&M Web</a>
           </div>
         </div>
         <div  className="w-full md:w-1/4 p-4 flex flex-col space-y-4">
