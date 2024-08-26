@@ -175,7 +175,7 @@ export default function Blogs() {
 
   const totalPages = Math.ceil(cardsData.length / postsPerPage);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber:number) => setCurrentPage(pageNumber);
 
   useEffect(() => {
     // Amikor az oldal szám változik, az oldal tetejére ugrik
@@ -189,7 +189,7 @@ export default function Blogs() {
   return (
     <>
       <Header />
-
+    
       <div className="bg-cyellow bg-opacity-20 w-full flex flex-col items-center justify-center p-4">
         <h1 className="text-cyellow font-bold uppercase text-4xl">n&m web</h1>
         <h1 className="text-cyellow uppercase text-xl">blog</h1>
