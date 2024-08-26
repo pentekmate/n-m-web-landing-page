@@ -10,7 +10,11 @@ import Form from "./Form";
 import Link from "next/link";
 import ToggleDiv from "./ToggleDiv";
 
-export default function Reference() {
+type ReferneceProps={
+  id:string
+}
+
+export default function Reference({id}:ReferneceProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => {
@@ -35,7 +39,7 @@ export default function Reference() {
   return (
     <>
       <div
-        id="reference"
+        id={id}
         className="w-full bg-cyellow py-10 flex px-4 md:justify-center xl:mt-24 md:items-center flex-col md:px-[90px] mt-12"
       >
      <div  data-aos-once data-aos="fade-right" className="w-full flex flex-col items-center">

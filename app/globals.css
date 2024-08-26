@@ -58,7 +58,6 @@ html {
 }
 
 
-
 input:focus{
   outline: #f5ba41 2px solid !important;
   outline: none;
@@ -89,4 +88,39 @@ input::placeholder{
   to {background-color: transparent;}
 }
 
+
+.active{
+ 
+}
+
+
+.box{
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: 10;
+  right: 0;
+  bottom:0;
+  width: 0;
+  border-bottom: 1px solid white;
+  transition: width 0.5s ease; 
+}
+
+.box.active::before {
+  width: 100%; 
+  
+  transition: all 300ms;
+  
+}
+html {
+  scroll-padding-top: 60px; /* height of your navbar */
+}
+.active{
+  font-weight: 900;
+}
 

@@ -9,7 +9,7 @@ export default function ToggleDiv({isVisible,formId,selectedPackage}:ToggleDivPr
    return(
     <div
     className={` ${
-      isVisible ? "  lg:h-[600px] xl:h-[750px]  m-8 sm:m-4 md:m-6 lg:m-8 xl:m-10" : "h-[0px] bg-red-900"
+      isVisible ? "  lg:h-[600px] xl:h-[750px]  m-8 sm:m-4 md:m-6 lg:m-8 xl:m-10" : "h-[0px] "
     } transition-all duration-500 flex flex-col  items-center space-y-4 `}
   >
     {isVisible && (

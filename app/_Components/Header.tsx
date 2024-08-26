@@ -11,7 +11,7 @@ export default function Header(){
     };  
   
     return(
-        <div  className="w-full flex flex-col  md:flex-row h-fit mt-4 md:px-[90px]">
+        <div   className="w-full flex flex-col  md:flex-row h-fit mt-4 md:px-[90px]">
                 <div data-aos="fade-up" className="w-full md:w-1/2 flex   items-center justify-center md:items-start flex-col gap-5 md:gap-6 xl:gap-20">
                 
                         <div className="flex  items-center md:items-start flex-col  lg:gap-2 xl:gap-8">

@@ -17,7 +17,7 @@ import PackageOffers from "./_Components/PackageOffers";
 import Reference from "./_Components/Reference";
 import { useEffect, useState } from "react";
 import AboutUs from "./_Components/AboutUs";
-
+import ScrollSpy from "react-ui-scrollspy";
 export default function Home() {
  
   useEffect(()=>{
@@ -25,16 +25,19 @@ export default function Home() {
 })
   return (
     <div className="w-full">
-      <Navigation/>
-      <Header></Header> 
-      <ImporantWebsite></ImporantWebsite>
-      <WhyChooseUs></WhyChooseUs>
-      <SpecialOffer></SpecialOffer>
-      <PackageOffers></PackageOffers>
-      <AboutUs></AboutUs>
- 
-      <Reference />
-      <Footer  />     
+      
+        <Navigation/>
+        <ScrollSpy activeClass="active"    >
+            <Header></Header> 
+            <ImporantWebsite></ImporantWebsite>
+            <WhyChooseUs></WhyChooseUs>
+            <SpecialOffer></SpecialOffer>
+            <PackageOffers id="tier"></PackageOffers>
+            <AboutUs></AboutUs>
+      
+            <Reference id="reference" />
+            <Footer  />   
+        </ScrollSpy>  
     </div>
   );
 }
