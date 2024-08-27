@@ -1,10 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { lato, poppins } from "../_Utils/fonts";
 
 interface CardProps {
   title: string;
-  imageSrc: string;
+  imageSrc: StaticImageData;
   hashtags: string[];
   slug: string;
   text: string;

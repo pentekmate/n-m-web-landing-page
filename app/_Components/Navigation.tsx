@@ -57,28 +57,36 @@ export default function Navigation() {
           <Link href="/">
             <Image src={scrolling? whiteLogo:logo} alt="logo" width={scrolling?110:75} height={scrolling?100:75} className={`${scrolling?"":"m-3"}`} />
           </Link>
-          <div className="flex  items-center">
-              <div className="hidden  sm:flex space-x-3">
-                <Link  className="hover:font-bold transition-all min-w-[100px] nav-item " href="/#tier" scroll={true}>
+          <div className="flex gap-4 items-center">
+              <div className="hidden sm:flex gap-12  ">
+                <Link  className="hover:font-bold transition-all  nav-item " href="/#tier" scroll={true}>
                     <div data-to-scrollspy-id="tier" className="box" >
                         Csomagok
                     </div>
                 </Link>
-                <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="/contact">
+                <Link className="hover:font-bold transition-all  nav-item " href="/contact">
                     <div className={`${path==='/contact'? "active":""} box`}>
                       Kapcsolat
                     </div>
                 </Link>
-                <Link  className="hover:font-bold transition-all min-w-[100px] nav-item " href="/#reference"  scroll={true}>
+                <Link  className="hover:font-bold transition-all  nav-item " href="/#reference"  scroll={true}>
                     <div  data-to-scrollspy-id="reference"  className="box" >
                       Referencia
                     </div>
                 </Link>
-                <Link className="hover:font-bold transition-all min-w-[100px] nav-item " href="/blog">
+                <Link className="hover:font-bold transition-all  nav-item " href="/gyik">
+                      <div className={`${path==="/gyik"?"active":""} box`}>
+                        Gyik
+                      </div>
+                </Link>
+
+                <Link className="hover:font-bold transition-all  nav-item " href="/blog">
                       <div className={`${path==="/blog"?"active":""} box`}>
                         Blog
                       </div>
                 </Link>
+
+               
               </div>
               <Button text="ajánlatot kérek" 
               navigate
@@ -121,6 +129,9 @@ export default function Navigation() {
                   </li>
                   <li  className={`mobile-nav-item  ${poppins.className} `}>
                     <Link onClick={()=>toggleMenu()}  href="/blog">Blog</Link>
+                  </li>
+                  <li className={`mobile-nav-item  ${poppins.className} `}>
+                    <Link onClick={()=>toggleMenu()}  href="/gyik">Gyik</Link>
                   </li>
                 </ul>
                 <Button navigate navigateTo="/contact" type="secondary" text="Ajánlatot kérek"></Button>

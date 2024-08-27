@@ -182,9 +182,11 @@ export default function Blogs() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
 
-  const doNothing = (event) => {
+
+  const doNothing = (event:React.MouseEvent) => {
     event.preventDefault(); // Megakadályozza az alapértelmezett link működést
   };
+
 
   return (
     <>
@@ -201,7 +203,7 @@ export default function Blogs() {
       </div>
 
       <div className="flex justify-center m-3 mb-12 pb-48 border-b-2 border-b-cyellow">
-        <h1 className="font-bold text-4xl">Hasznos cikkek, információk</h1>
+        <h1 className={`font-bold text-4xl ${poppins.className}`}>Hasznos cikkek, információk</h1>
       </div>
 
       <div className="w-full flex justify-center items-center gap-24 flex-col px-4 py-8">
