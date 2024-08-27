@@ -20,14 +20,14 @@ export default function GyikCollapseItem({title,content}:gyakDataObject){
 
         return content.split('\n').map((line, index) => (
         <>
-              <p key={index} className="text-[22px] text-fgrey" dangerouslySetInnerHTML={{ __html: line }}></p>
+              <p key={index} className="text-[16px] md:text-[22px] text-fgrey" dangerouslySetInnerHTML={{ __html: line }}></p>
             <br />
         </>
         ));
     }
     return(
-        <div className={`shadow-xl border-[1px] py-[17px] px-[15px] border-[#ECECEC] transition-all duration-300 w-full flex flex-col gap-8 rounded-xl ${!isOpen?" max-h-[78px]" : "max-h-[800px]"}`}>
-            <div className="flex items-center justify-between text-[26px]  w-full">
+        <div className={`shadow-xl border-[1px] py-[17px] px-[15px] border-[#ECECEC] transition-all duration-300 w-full flex flex-col gap-8 rounded-xl ${!isOpen?" max-h-[78px]" : "md:max-h-[800px] max-w-[1600px]"}`}>
+            <div className="flex items-center justify-between text-[18px] md:text-[26px]  w-full">
                 <p className={`${poppins.className} font-medium `}>{title}</p>
                 <div  ref={toggleButtonRef} onClick={()=>toggleOpen()}  className="w-[28px] transition-all duration-300 h-[28px] cursor-pointer">
                     <Image alt="collapse" src={gyikCollapsetrue}></Image>
@@ -35,7 +35,7 @@ export default function GyikCollapseItem({title,content}:gyakDataObject){
                
             </div>
             {isOpen && 
-                <p className={`${lato.className} text-[22px] text-fgrey`}>{formatContentAsParagraphs(content)}</p>
+                <p className={`${lato.className}`}>{formatContentAsParagraphs(content)}</p>
                 }
         </div>
     )

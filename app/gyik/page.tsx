@@ -47,10 +47,10 @@ export default function Page(){
             </div>
 
             <div className="flex justify-center m-3 mb-12 ">
-                <h1 className={`font-bold text-4xl ${poppins.className}`}>Ha bármi kérdésed van,itt megtalálod a választ</h1>
+                <h1 className={`font-bold h1 ${poppins.className}`}>Ha bármi kérdésed van,itt megtalálod a választ</h1>
             </div>
 
-            <div className="mx-[272px]  flex flex-col gap-16 mb-12">
+            <div className="md:mx-[272px]  flex flex-col gap-16 mb-12">
              
                     {gyakData.map((item:gyakDataObject,index)=>
                         <GyikCollapseItem
@@ -62,11 +62,11 @@ export default function Page(){
             </div>
 
             <div className="flex justify-center m-3 mb-12 ">
-                <h2 className={`font-bold text-4xl ${poppins.className}`}>Van olyan téma, ami nincs érintve a fentiekben?</h2>
+                <h2 className={`font-bold h1 ${poppins.className}`}>Van olyan téma, ami nincs érintve a fentiekben?</h2>
             </div>
 
 
-            <div className="mx-[272px]">
+            <div className="md:mx-[272px]">
                 <Form message></Form>
             </div>
             <Footer></Footer>
